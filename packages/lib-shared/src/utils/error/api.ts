@@ -9,7 +9,7 @@
  */
 
 import type { NextResponse } from 'next/server';
-import { ERROR_CODES, HTTP_STATUS } from './core-types';
+import { ERROR_CODES, HTTP_STATUS, createErrorResponseObject } from './core-types';
 import { getErrorDetails, isZodError } from './core';
 import {
   AppError,
@@ -22,7 +22,7 @@ import {
   ValidationError,
 } from './custom-errors';
 import type { ApiErrorResponse } from './core-types';
-import { createErrorResponseObject } from './core-types';
+
 
 // Re-export core types for convenience
 export type { ApiErrorResponse, ApiResponse, CreateErrorResponseParams } from './core-types';
