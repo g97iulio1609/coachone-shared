@@ -1,0 +1,46 @@
+{
+    "name": "@OneCoach/lib-theme",
+    "version": "0.0.0",
+    "description": "Cross-platform theming system with Zustand store and React provider",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./src/index.ts"
+        },
+        "./store": {
+            "types": "./src/theme.store.ts",
+            "default": "./src/theme.store.ts"
+        },
+        "./provider": {
+            "types": "./src/theme-provider.tsx",
+            "default": "./src/theme-provider.tsx"
+        },
+        "./dark-mode-classes": {
+            "types": "./src/dark-mode-classes.ts",
+            "default": "./src/dark-mode-classes.ts"
+        }
+    },
+    "scripts": {
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "zustand": "^5.0.0",
+        "clsx": "^2.0.0",
+        "tailwind-merge": "^2.0.0"
+    },
+    "peerDependencies": {
+        "react": ">=18.0.0 <20"
+    },
+    "peerDependenciesMeta": {
+        "react": {
+            "optional": false
+        }
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.5",
+        "typescript": "^5.9.3"
+    },
+    "sideEffects": false
+}
