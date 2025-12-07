@@ -2,7 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,20 +27,41 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": "..",
+    "baseUrl": ".",
     "paths": {
-      "@OneCoach/constants": ["./packages/constants/src/index.ts"],
-      "@OneCoach/constants/*": ["./packages/constants/src/*"],
-      "@OneCoach/schemas": ["./packages/schemas/src/index.ts"],
-      "@OneCoach/schemas/*": ["./packages/schemas/src/*"],
-      "@OneCoach/contracts": ["./packages/contracts/src/index.ts"],
-      "@OneCoach/contracts/*": ["./packages/contracts/src/*"],
-      "@OneCoach/lib-shared": ["./packages/lib-shared/src/index.ts"],
-      "@OneCoach/lib-shared/*": ["./packages/lib-shared/src/*"],
-      "@OneCoach/types": ["./packages/types/src/index.ts"],
-      "@OneCoach/types/*": ["./packages/types/src/*"],
-      "@OneCoach/*": ["./packages/schemas/src/types/onecoach-stub.ts"],
-      "@onecoach/*": ["./packages/schemas/src/types/onecoach-stub.ts"]
+      "@OneCoach/types": [
+        "./types/src/index.ts"
+      ],
+      "@OneCoach/types/*": [
+        "./types/src/*"
+      ],
+      "@OneCoach/constants": [
+        "./constants/src/index.ts"
+      ],
+      "@OneCoach/constants/*": [
+        "./constants/src/*"
+      ],
+      "@OneCoach/schemas": [
+        "./schemas/src/index.ts"
+      ],
+      "@OneCoach/schemas/*": [
+        "./schemas/src/*"
+      ],
+      "@OneCoach/contracts": [
+        "./contracts/src/index.ts"
+      ],
+      "@OneCoach/contracts/*": [
+        "./contracts/src/*"
+      ],
+      "@OneCoach/lib-shared": [
+        "./lib-shared/src/index.ts"
+      ],
+      "@OneCoach/lib-shared/*": [
+        "./lib-shared/src/*"
+      ],
+      "@OneCoach/lib-workout/intensity-calculator": [
+        "../../coachone-backend/packages/lib-workout/src/helpers/intensity-calculator.ts"
+      ]
     }
   }
 }

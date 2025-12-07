@@ -1,16 +1,19 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../../../packages/tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./.tsbuild",
-    "rootDir": "..",
-    "composite": true,
-    "noEmit": false,
-    "strict": true
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true
   },
-  "references": [
-    { "path": "../types" },
-    { "path": "../constants" }
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", ".tsbuild"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".tsbuild",
+    "**/*.js",
+    "**/*.d.ts"
+  ]
 }

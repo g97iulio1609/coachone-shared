@@ -9,7 +9,7 @@
  */
 
 import type { NextResponse } from 'next/server';
-import { ERROR_CODES, HTTP_STATUS } from '@OneCoach/lib-ai-agents/constants';
+import { ERROR_CODES, HTTP_STATUS } from './core-types';
 import { getErrorDetails, isZodError } from './core';
 import {
   AppError,
@@ -21,11 +21,12 @@ import {
   ConflictError,
   ValidationError,
 } from './custom-errors';
-import type { ApiErrorResponse } from '@OneCoach/lib-api/error-handler/core';
-import { createErrorResponseObject } from '@OneCoach/lib-api/error-handler/core';
+import type { ApiErrorResponse } from './core-types';
+import { createErrorResponseObject } from './core-types';
 
-// Re-export core type for convenience
-export type { ApiErrorResponse } from '@OneCoach/lib-api/error-handler/core';
+// Re-export core types for convenience
+export type { ApiErrorResponse, ApiResponse, CreateErrorResponseParams } from './core-types';
+export { createErrorResponseObject, createApiResponseObject } from './core-types';
 
 /**
  * Create standardized API error response (cross-platform)
@@ -160,11 +161,11 @@ export function mapErrorToApiResponse(error: unknown): {
     const errorDetails: Record<string, unknown> =
       process.env.NODE_ENV === 'development'
         ? {
-            name: details.name,
-            stack: details.stack,
-            code: details.code,
-            meta: details.meta,
-          }
+          name: details.name,
+          stack: details.stack,
+          code: details.code,
+          meta: details.meta,
+        }
         : {};
 
     return createApiErrorResponse(

@@ -1,5 +1,5 @@
 {
-  "name": "@OneCoach/lib-shared",
+  "name": "@onecoach/lib-shared",
   "version": "0.0.0",
   "description": "Utilities condivise tra tutti i package",
   "main": "src/index.ts",
@@ -147,12 +147,11 @@
     }
   },
   "scripts": {
-    "type-check": "tsc -b"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@OneCoach/types": "workspace:*",
     "@OneCoach/schemas": "workspace:*",
-    "@OneCoach/lib-api": "workspace:*",
     "@prisma/client": "7.0.0"
   },
   "devDependencies": {

@@ -1,21 +1,9 @@
-/**
- * Global Dialog Utilities
- *
- * Provides global functions to replace window.alert, window.confirm, window.prompt
- * These functions use Zustand store directly (can be called outside React components)
- *
- * Usage:
- *   import { dialog } from '@OneCoach/lib-shared/utils/dialog-global';
- *   await dialog.alert('Message');
- *   const confirmed = await dialog.confirm('Are you sure?');
- *   const value = await dialog.prompt('Enter value:');
- */
-export declare const dialog: {
-    alert: (message: string, title?: string) => Promise<void>;
-    confirm: (message: string, title?: string) => Promise<boolean>;
-    prompt: (message: string, defaultValue?: string, title?: string) => Promise<string | null>;
-    info: (message: string, title?: string) => Promise<void>;
-    success: (message: string, title?: string) => Promise<void>;
-    warning: (message: string, title?: string) => Promise<void>;
-    error: (message: string, title?: string) => Promise<void>;
-};
+export namespace dialog {
+    function alert(message: any, title: any): Promise<any>;
+    function confirm(message: any, title: any): Promise<any>;
+    function prompt(message: any, defaultValue: any, title: any): Promise<any>;
+    function info(message: any, title: any): Promise<any>;
+    function success(message: any, title: any): Promise<any>;
+    function warning(message: any, title: any): Promise<any>;
+    function error(message: any, title: any): Promise<any>;
+}
