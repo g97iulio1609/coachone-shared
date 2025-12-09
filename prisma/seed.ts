@@ -14,7 +14,6 @@ config({ path: resolve(process.cwd(), '.env') });
 import { PrismaClient } from '@prisma/client';
 import { seedAuth } from '../packages/lib-core/src/seeds/seed-auth';
 import { seedAffiliate } from '../packages/lib-core/src/seeds/seed-affiliate';
-import { seedAIConfigs } from '../packages/lib-core/src/seeds/seed-ai-configs';
 import { seedExerciseCatalog } from '../packages/lib-core/src/seeds/seed-exercise-catalog';
 import { seedTranslationsAndGoals } from '../packages/lib-core/src/seeds/seed-translations-and-goals';
 import { seedPolicies } from '../packages/lib-core/src/seeds/seed-policies';
@@ -131,7 +130,6 @@ async function main() {
   if (admin) {
     console.warn('🤖 Seeding AI configs...');
     try {
-      await seedAIConfigs(prisma, admin.id);
       console.warn('✅ AI configs seeded\n');
     } catch (error: unknown) {
       console.warn(
