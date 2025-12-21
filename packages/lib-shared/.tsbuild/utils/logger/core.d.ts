@@ -13,6 +13,10 @@ export interface LoggerConfig {
     readonly enabledInProduction: boolean;
     readonly prefix?: string;
     readonly enableTimestamps: boolean;
+    readonly sampleRates?: Partial<Record<LogLevel, number>>;
+    readonly maxStringLength?: number;
+    readonly maxArrayLength?: number;
+    readonly maxObjectDepth?: number;
 }
 /**
  * Logger class with environment-aware logging and performance tracking
@@ -21,6 +25,10 @@ export declare class Logger {
     private readonly config;
     private readonly isDevelopment;
     private readonly isServer;
+    private readonly sampleRates;
+    private readonly maxStringLength;
+    private readonly maxArrayLength;
+    private readonly maxObjectDepth;
     constructor(config?: Partial<LoggerConfig>);
     /**
      * Create child logger with prefix
@@ -34,6 +42,14 @@ export declare class Logger {
      * Check if logging is enabled for this level
      */
     private shouldLog;
+    /**
+     * Sampling to reduce noise in production
+     */
+    private shouldSample;
+    /**
+     * Sanitize context to avoid heavy payloads and cycles
+     */
+    private sanitizeContext;
     /**
      * Format log entry for structured logging
      */
@@ -84,3 +100,4 @@ export declare class Logger {
      */
     measure<T>(label: string, fn: () => Promise<T> | T, context?: LogContext): Promise<T>;
 }
+//# sourceMappingURL=core.d.ts.map

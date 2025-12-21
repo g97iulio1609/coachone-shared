@@ -43,3 +43,4 @@ export declare function getDateRangeFromPeriod(period: string): {
  * Get number of days between two dates
  */
 export declare function getDaysDifference(date1: Date, date2: Date): number;
+//# sourceMappingURL=date-helpers.d.ts.map

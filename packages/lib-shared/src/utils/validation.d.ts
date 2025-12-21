@@ -44,4 +44,3 @@ export declare function isValidUrl(url: string): boolean;
  */
 export type Validator<T = unknown> = (value: T, allValues?: T) => string | null;
 export declare function createValidator<T>(validators: Validator<T>[]): (value: T) => string | null;
-//# sourceMappingURL=validation.d.ts.map

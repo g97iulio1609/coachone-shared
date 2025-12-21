@@ -26,3 +26,4 @@ export declare function validatePassword(password: string, requirements?: Passwo
  * Genera un messaggio descrittivo dei requisiti password
  */
 export declare function getPasswordRequirementsMessage(requirements?: PasswordRequirements): string;
+//# sourceMappingURL=password-validation.d.ts.map

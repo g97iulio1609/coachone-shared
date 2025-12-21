@@ -93,4 +93,3 @@ export interface ContextRegistryEntry {
     builder: ScreenContextBuilder;
     capabilities: Partial<CopilotCapabilities>;
 }
-//# sourceMappingURL=copilot.types.d.ts.map

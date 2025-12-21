@@ -39,4 +39,3 @@ export declare const optionalUrlSchema: z.ZodPipe<z.ZodTransform<{} | undefined,
  * String array schema
  */
 export declare const stringArraySchema: z.ZodArray<z.ZodString>;
-//# sourceMappingURL=common.schemas.d.ts.map

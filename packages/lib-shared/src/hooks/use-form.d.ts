@@ -39,4 +39,3 @@ export interface UseFormReturn<T extends object> {
  * Supports both Uncontrolled (internal state) and Controlled (external state) modes.
  */
 export declare function useForm<T extends object>(options: UseFormOptions<T>): UseFormReturn<T>;
-//# sourceMappingURL=use-form.d.ts.map

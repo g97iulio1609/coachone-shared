@@ -1,5 +1,5 @@
 /**
- * @OneCoach/contracts
+ * @onecoach/contracts
  *
  * Interfacce e contratti per tutti i servizi
  * UNICA FONTE DI VERITÀ per i contratti dei servizi
@@ -12,3 +12,4 @@ export * from './services/analytics.service.contract';
 export * from './services/core.service.contract';
 export * from './services/ai.service.contract';
 export * from './services/marketplace.service.contract';
+//# sourceMappingURL=index.d.ts.map

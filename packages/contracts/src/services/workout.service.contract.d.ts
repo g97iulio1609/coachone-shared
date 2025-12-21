@@ -13,4 +13,3 @@ export interface IWorkoutService {
     getAll(): ApiResponse<WorkoutProgram[]>;
     getByStatus(status: WorkoutProgram['status']): ApiResponse<WorkoutProgram[]>;
 }
-//# sourceMappingURL=workout.service.contract.d.ts.map

@@ -20,4 +20,3 @@ export declare const foodTranslationSchema: z.ZodObject<{
     description: z.ZodString;
 }, z.core.$strip>;
 export type FoodTranslation = z.infer<typeof foodTranslationSchema>;
-//# sourceMappingURL=base.schemas.d.ts.map

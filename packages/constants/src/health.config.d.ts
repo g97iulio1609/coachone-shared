@@ -47,4 +47,3 @@ export declare const HEALTH_STORAGE_KEYS: {
     readonly AUTO_SYNC_ENABLED: "@health/autoSyncEnabled";
     readonly PERMISSIONS_GRANTED: "@health/permissionsGranted";
 };
-//# sourceMappingURL=health.config.d.ts.map

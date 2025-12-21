@@ -175,4 +175,3 @@ export interface UserStatistics {
     lastActivity?: Date;
     joinedDate: Date;
 }
-//# sourceMappingURL=database.types.d.ts.map

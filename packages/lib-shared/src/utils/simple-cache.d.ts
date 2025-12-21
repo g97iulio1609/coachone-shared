@@ -17,4 +17,3 @@ export declare class SimpleCache<K, V> {
     clear(): void;
     private enforceLimit;
 }
-//# sourceMappingURL=simple-cache.d.ts.map

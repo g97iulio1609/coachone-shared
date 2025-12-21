@@ -14,4 +14,3 @@ export interface INutritionService {
     getByGoal(goalId: string): ApiResponse<NutritionPlan[]>;
     getByPlanId(planId: string): ApiResponse<NutritionPlan | null>;
 }
-//# sourceMappingURL=nutrition.service.contract.d.ts.map

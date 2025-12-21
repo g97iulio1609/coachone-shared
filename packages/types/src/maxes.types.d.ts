@@ -200,4 +200,3 @@ export declare function apiItemToMax(item: MaxApiItem): Max;
  * Converte un MaxRealtimePayload in Max
  */
 export declare function realtimePayloadToMax(payload: MaxRealtimePayload): Max;
-//# sourceMappingURL=maxes.types.d.ts.map

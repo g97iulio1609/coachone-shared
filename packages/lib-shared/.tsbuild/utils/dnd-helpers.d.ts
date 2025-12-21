@@ -164,3 +164,4 @@ export declare function isWorkoutDayDragId(dragId: string): boolean;
  * Check if a drag ID represents a workout week
  */
 export declare function isWorkoutWeekDragId(dragId: string): boolean;
+//# sourceMappingURL=dnd-helpers.d.ts.map

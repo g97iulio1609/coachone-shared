@@ -159,12 +159,12 @@ export declare const exerciseSchema: z.ZodObject<{
         isolation: "isolation";
     }>;
     category: z.ZodEnum<{
-        core: "core";
         strength: "strength";
         cardio: "cardio";
         flexibility: "flexibility";
         balance: "balance";
         endurance: "endurance";
+        core: "core";
     }>;
     muscleGroup: z.ZodOptional<z.ZodString>;
     muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -262,12 +262,12 @@ export declare const workoutDaySchema: z.ZodObject<{
             isolation: "isolation";
         }>;
         category: z.ZodEnum<{
-            core: "core";
             strength: "strength";
             cardio: "cardio";
             flexibility: "flexibility";
             balance: "balance";
             endurance: "endurance";
+            core: "core";
         }>;
         muscleGroup: z.ZodOptional<z.ZodString>;
         muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -373,12 +373,12 @@ export declare const workoutWeekSchema: z.ZodObject<{
                 isolation: "isolation";
             }>;
             category: z.ZodEnum<{
-                core: "core";
                 strength: "strength";
                 cardio: "cardio";
                 flexibility: "flexibility";
                 balance: "balance";
                 endurance: "endurance";
+                core: "core";
             }>;
             muscleGroup: z.ZodOptional<z.ZodString>;
             muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -496,12 +496,12 @@ export declare const workoutProgramSchema: z.ZodObject<{
                     isolation: "isolation";
                 }>;
                 category: z.ZodEnum<{
-                    core: "core";
                     strength: "strength";
                     cardio: "cardio";
                     flexibility: "flexibility";
                     balance: "balance";
                     endurance: "endurance";
+                    core: "core";
                 }>;
                 muscleGroup: z.ZodOptional<z.ZodString>;
                 muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -668,12 +668,12 @@ export declare const aiExerciseSchema: z.ZodObject<{
         isolation: "isolation";
     }>;
     category: z.ZodEnum<{
-        core: "core";
         strength: "strength";
         cardio: "cardio";
         flexibility: "flexibility";
         balance: "balance";
         endurance: "endurance";
+        core: "core";
     }>;
     muscleGroup: z.ZodOptional<z.ZodString>;
     muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -771,12 +771,12 @@ export declare const aiWorkoutDaySchema: z.ZodObject<{
             isolation: "isolation";
         }>;
         category: z.ZodEnum<{
-            core: "core";
             strength: "strength";
             cardio: "cardio";
             flexibility: "flexibility";
             balance: "balance";
             endurance: "endurance";
+            core: "core";
         }>;
         muscleGroup: z.ZodOptional<z.ZodString>;
         muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -882,12 +882,12 @@ export declare const aiWorkoutWeekSchema: z.ZodObject<{
                 isolation: "isolation";
             }>;
             category: z.ZodEnum<{
-                core: "core";
                 strength: "strength";
                 cardio: "cardio";
                 flexibility: "flexibility";
                 balance: "balance";
                 endurance: "endurance";
+                core: "core";
             }>;
             muscleGroup: z.ZodOptional<z.ZodString>;
             muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -1006,12 +1006,12 @@ export declare const aiWorkoutProgramSchema: z.ZodObject<{
                     isolation: "isolation";
                 }>;
                 category: z.ZodEnum<{
-                    core: "core";
                     strength: "strength";
                     cardio: "cardio";
                     flexibility: "flexibility";
                     balance: "balance";
                     endurance: "endurance";
+                    core: "core";
                 }>;
                 muscleGroup: z.ZodOptional<z.ZodString>;
                 muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
@@ -1201,10 +1201,10 @@ export declare const exerciseSelectionOutputSchema: z.ZodObject<{
         name: z.ZodString;
         exerciseId: z.ZodOptional<z.ZodString>;
         category: z.ZodEnum<{
+            cardio: "cardio";
             core: "core";
             compound: "compound";
             isolation: "isolation";
-            cardio: "cardio";
             mobility: "mobility";
         }>;
         targetMuscles: z.ZodArray<z.ZodString>;
@@ -1223,8 +1223,8 @@ export declare const exerciseSelectionOutputSchema: z.ZodObject<{
     weeklyStructure: z.ZodObject<{
         splitType: z.ZodEnum<{
             custom: "custom";
-            upper_lower: "upper_lower";
             full_body: "full_body";
+            upper_lower: "upper_lower";
             push_pull_legs: "push_pull_legs";
             bro_split: "bro_split";
         }>;
@@ -1247,8 +1247,8 @@ export declare const workoutPlanningOutputSchema: z.ZodObject<{
         name: z.ZodString;
         splitType: z.ZodEnum<{
             custom: "custom";
-            upper_lower: "upper_lower";
             full_body: "full_body";
+            upper_lower: "upper_lower";
             push_pull_legs: "push_pull_legs";
             bro_split: "bro_split";
         }>;
@@ -1278,4 +1278,3 @@ export declare const workoutPlanningOutputSchema: z.ZodObject<{
     }, z.core.$strip>;
 }, z.core.$strip>;
 export type WorkoutPlanningOutput = z.infer<typeof workoutPlanningOutputSchema>;
-//# sourceMappingURL=base.schemas.d.ts.map

@@ -30,4 +30,3 @@ export declare function getWeekAndDayFromDate<T extends PlanWithWeeks>(plan: T, 
     weekNumber: number;
     dayNumber: number;
 } | null;
-//# sourceMappingURL=plan-helpers.d.ts.map

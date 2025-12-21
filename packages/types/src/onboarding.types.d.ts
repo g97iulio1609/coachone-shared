@@ -20,4 +20,3 @@ export interface StepCompletionInput {
     skipped?: boolean;
     metadata?: Record<string, unknown>;
 }
-//# sourceMappingURL=onboarding.types.d.ts.map

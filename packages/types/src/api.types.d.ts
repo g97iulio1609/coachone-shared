@@ -78,4 +78,3 @@ export interface HealthCheckResponse extends ApiResponse {
     uptime: number;
     timestamp: string;
 }
-//# sourceMappingURL=api.types.d.ts.map

@@ -222,3 +222,4 @@ export declare function toCheckpointMetadata(json: Prisma.JsonValue | null | und
  * @returns Volume in kg (reps * weight) o 0 se dati mancanti
  */
 export declare function calculateSetVolume(set: ExerciseSet): number;
+//# sourceMappingURL=prisma-type-guards.d.ts.map

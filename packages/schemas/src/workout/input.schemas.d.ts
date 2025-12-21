@@ -47,9 +47,9 @@ export declare const workoutStreamRequestSchema: z.ZodObject<{
     model: z.ZodOptional<z.ZodString>;
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>;
 /**
@@ -73,4 +73,3 @@ export type WorkoutRequestBase = z.infer<typeof workoutRequestBaseSchema>;
 export type WorkoutStreamRequest = z.infer<typeof workoutStreamRequestSchema>;
 export type CreateWorkoutSession = z.infer<typeof createWorkoutSessionSchema>;
 export type UpdateWorkoutSession = z.infer<typeof updateWorkoutSessionSchema>;
-//# sourceMappingURL=input.schemas.d.ts.map

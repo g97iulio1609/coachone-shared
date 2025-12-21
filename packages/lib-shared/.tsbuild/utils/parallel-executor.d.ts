@@ -152,3 +152,4 @@ export declare class ParallelExecutor<T extends ExecutableTask> {
  * Execute tasks in batches/waves respecting dependencies
  */
 export declare function executeInWaves<T extends ExecutableTask>(waves: T[][], executor: TaskExecutor<T>, config: ParallelExecutorConfig, onWaveComplete?: (waveIndex: number, results: ExecutionResult[]) => void, onProgress?: (completed: number, total: number, result: ExecutionResult) => void): Promise<ExecutionResult[]>;
+//# sourceMappingURL=parallel-executor.d.ts.map

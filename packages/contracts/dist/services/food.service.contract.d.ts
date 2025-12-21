@@ -4,8 +4,8 @@
  * Interfaccia per il servizio alimenti
  * UNICA FONTE DI VERITÀ per il contratto del servizio
  */
-import type { CreateFoodInput, UpdateFoodInput, FoodQueryInput } from '@OneCoach/schemas';
-import type { FoodItem } from '@OneCoach/types';
+import type { CreateFoodInput, UpdateFoodInput, FoodQueryInput } from '@onecoach/schemas';
+import type { FoodItem } from '@onecoach/types';
 export interface IFoodService {
     create(input: CreateFoodInput): Promise<FoodItem>;
     update(id: string, input: UpdateFoodInput): Promise<FoodItem>;
@@ -19,3 +19,4 @@ export interface IFoodService {
     }>;
     matchByBarcode(barcode: string, locale?: string): Promise<FoodItem | null>;
 }
+//# sourceMappingURL=food.service.contract.d.ts.map

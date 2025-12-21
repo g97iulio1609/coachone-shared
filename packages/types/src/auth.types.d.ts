@@ -90,4 +90,3 @@ export type AuthenticatedUser = {
     image?: string | null;
     copilotEnabled: boolean;
 };
-//# sourceMappingURL=auth.types.d.ts.map

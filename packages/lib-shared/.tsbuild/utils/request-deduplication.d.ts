@@ -42,3 +42,4 @@ export declare function clearAllRequests(): void;
  * Useful for debugging
  */
 export declare function getPendingRequestCount(): number;
+//# sourceMappingURL=request-deduplication.d.ts.map

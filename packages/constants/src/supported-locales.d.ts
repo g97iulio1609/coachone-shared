@@ -22,4 +22,3 @@ export declare function isSupportedFoodLocale(locale: string): locale is Support
  * Get all supported locales as array
  */
 export declare function getAllSupportedFoodLocales(): readonly SupportedFoodLocale[];
-//# sourceMappingURL=supported-locales.d.ts.map

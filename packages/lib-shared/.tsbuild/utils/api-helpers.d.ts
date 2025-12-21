@@ -20,3 +20,4 @@ export interface BatchResult {
     deleted?: number;
 }
 export declare function createBatchResult(): BatchResult;
+//# sourceMappingURL=api-helpers.d.ts.map

@@ -9,4 +9,3 @@ export declare const VALIDATION: {
     readonly MIN_MESSAGE_LENGTH: 1;
     readonly MAX_MESSAGE_LENGTH: 2000;
 };
-//# sourceMappingURL=validation.d.ts.map

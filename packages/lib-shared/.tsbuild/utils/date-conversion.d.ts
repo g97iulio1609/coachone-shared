@@ -39,3 +39,4 @@ export declare function datesToStrings(dates: (Date | null)[]): (string | null)[
  * @returns Array of Date objects
  */
 export declare function stringsToDates(strings: (string | null)[]): (Date | null)[];
+//# sourceMappingURL=date-conversion.d.ts.map

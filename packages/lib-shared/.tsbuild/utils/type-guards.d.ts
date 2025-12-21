@@ -39,3 +39,4 @@ export declare function isErrorWithMessage(error: unknown): error is Error & {
 export declare function isErrorWithCode(error: unknown): error is Error & {
     code: string | number;
 };
+//# sourceMappingURL=type-guards.d.ts.map

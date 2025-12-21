@@ -145,4 +145,3 @@ export declare function createOperationResult<T>(success: boolean, metadata: Ope
     message: string;
     details?: unknown;
 }): OperationResult<T>;
-//# sourceMappingURL=common.types.d.ts.map

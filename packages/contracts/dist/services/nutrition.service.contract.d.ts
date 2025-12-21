@@ -4,7 +4,7 @@
  * Interfaccia per il servizio nutrizione
  * UNICA FONTE DI VERITÀ per il contratto del servizio
  */
-import type { NutritionPlan, ApiResponse } from '@OneCoach/types';
+import type { NutritionPlan, ApiResponse } from '@onecoach/types';
 export interface INutritionService {
     create(plan: Omit<NutritionPlan, 'id' | 'createdAt' | 'updatedAt'>): ApiResponse<NutritionPlan>;
     update(id: string, plan: Partial<NutritionPlan>): ApiResponse<NutritionPlan>;
@@ -14,3 +14,4 @@ export interface INutritionService {
     getByGoal(goalId: string): ApiResponse<NutritionPlan[]>;
     getByPlanId(planId: string): ApiResponse<NutritionPlan | null>;
 }
+//# sourceMappingURL=nutrition.service.contract.d.ts.map

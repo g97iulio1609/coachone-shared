@@ -100,3 +100,4 @@ export declare function validateNotes(notes: string, maxLength?: number): {
     valid: boolean;
     error?: string;
 };
+//# sourceMappingURL=validation-utils.d.ts.map

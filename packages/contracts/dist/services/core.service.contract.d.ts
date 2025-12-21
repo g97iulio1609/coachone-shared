@@ -7,7 +7,7 @@
 import type { TransactionType, ActivityLevel, Sex, WeightUnit, DietType, user_profiles } from '@prisma/client';
 import type Stripe from 'stripe';
 import { SubscriptionPlan, SubscriptionStatus } from '@prisma/client';
-import type { OnboardingProgress, StepCompletionInput } from '@OneCoach/types';
+import type { OnboardingProgress, StepCompletionInput } from '@onecoach/types';
 /**
  * Credit Service Contract
  */
@@ -111,3 +111,4 @@ export interface IOnboardingService {
     completeAll(userId: string): Promise<OnboardingProgress>;
     isCompleted(userId: string): Promise<boolean>;
 }
+//# sourceMappingURL=core.service.contract.d.ts.map

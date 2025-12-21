@@ -189,4 +189,3 @@ export interface WorkoutTemplate {
     createdAt: string;
     updatedAt: string;
 }
-//# sourceMappingURL=workout.types.d.ts.map

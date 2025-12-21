@@ -28,4 +28,3 @@ export declare const createBodyMeasurementSchema: z.ZodObject<{
 }, z.core.$strip>;
 export type BodyMeasurementsQuery = z.infer<typeof bodyMeasurementsQuerySchema>;
 export type CreateBodyMeasurementInput = z.infer<typeof createBodyMeasurementSchema>;
-//# sourceMappingURL=body-measurements.schemas.d.ts.map

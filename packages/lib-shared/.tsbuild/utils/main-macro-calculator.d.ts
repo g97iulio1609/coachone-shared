@@ -48,3 +48,4 @@ export declare function getMainMacroEmoji(mainMacro: MainMacro): string;
  * Validate main macro data
  */
 export declare function isValidMainMacro(mainMacro: unknown): mainMacro is MainMacro;
+//# sourceMappingURL=main-macro-calculator.d.ts.map

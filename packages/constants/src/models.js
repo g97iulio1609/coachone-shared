@@ -32,21 +32,21 @@ export const MODEL_CONFIG = {
     [AI_MODELS.SONNET_4_5]: {
         name: 'Claude Sonnet 4.5',
         maxTokens: TOKEN_LIMITS.MAX_OUTPUT,
-        defaultTemperature: 0.7,
+        defaultTemperature: 1,
         supportExtendedThinking: true,
         description: 'Modello bilanciato con ragionamento esteso',
     },
     [AI_MODELS.HAIKU_4_5]: {
         name: 'Claude Haiku 4.5',
         maxTokens: TOKEN_LIMITS.MAX_OUTPUT,
-        defaultTemperature: 0.7,
+        defaultTemperature: 1,
         supportExtendedThinking: false,
         description: 'Modello veloce per risposte rapide',
     },
     [AI_MODELS.SONNET_3_5]: {
         name: 'Claude Sonnet 3.5',
         maxTokens: TOKEN_LIMITS.MAX_OUTPUT,
-        defaultTemperature: 0.7,
+        defaultTemperature: 1,
         supportExtendedThinking: false,
         description: 'Modello precedente, affidabile',
     },
@@ -56,7 +56,7 @@ export const MODEL_CONFIG = {
  */
 export const TEMPERATURE_PRESETS = {
     PRECISE: 0.3,
-    BALANCED: 0.7,
+    BALANCED: 1.0,
     CREATIVE: 1.0,
 };
 /**

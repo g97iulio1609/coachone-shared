@@ -7,4 +7,3 @@ export declare const API_ENDPOINTS: {
     readonly NUTRITION: "/api/nutrition";
     readonly HEALTH: "/api/health";
 };
-//# sourceMappingURL=api.d.ts.map

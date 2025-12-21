@@ -30,4 +30,3 @@ export declare class AILogger extends Logger {
      */
     generationComplete(type: 'workout' | 'nutrition' | 'chat', userId: string, duration: number): void;
 }
-//# sourceMappingURL=domain.d.ts.map

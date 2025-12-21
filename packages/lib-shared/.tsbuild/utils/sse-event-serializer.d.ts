@@ -52,3 +52,4 @@ export declare function serializeEventToSSE(event: SSEEvent): string;
  * sendEvent({ type: 'subtask-start', ... });
  */
 export declare function createSSEEventSender(encoder: TextEncoder, controller: ReadableStreamDefaultController<Uint8Array>): (event: SSEEvent) => void;
+//# sourceMappingURL=sse-event-serializer.d.ts.map

@@ -18,3 +18,4 @@ export declare function trackFlagEvent(flagKey: string, event: 'ENABLED' | 'DISA
  */
 export declare function submitFlagFeedback(flagKey: string, rating: number, comment?: string, metadata?: Record<string, unknown>): Promise<boolean>;
 export {};
+//# sourceMappingURL=use-feature-flag.d.ts.map

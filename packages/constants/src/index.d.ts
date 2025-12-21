@@ -11,4 +11,3 @@ export * from './iap.config';
 export * from './config';
 export * from './prompts';
 export * from './colors';
-//# sourceMappingURL=index.d.ts.map

@@ -29,9 +29,9 @@ export declare const tierConfigSchema: z.ZodObject<{
 export declare const reasoningConfigSchema: z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>;
 /**
@@ -66,15 +66,15 @@ export declare const nutritionRequestSchema: z.ZodObject<{
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>;
@@ -110,23 +110,23 @@ export declare const nutritionStreamRequestSchema: z.ZodIntersection<z.ZodObject
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>, z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>>;
 /**
@@ -135,9 +135,9 @@ export declare const nutritionStreamRequestSchema: z.ZodIntersection<z.ZodObject
 export declare const nutritionModifyStreamRequestSchema: z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
     tier: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
         fast: "fast";
@@ -209,4 +209,3 @@ export type NutritionStreamRequest = z.infer<typeof nutritionStreamRequestSchema
 export type NutritionModifyStreamRequest = z.infer<typeof nutritionModifyStreamRequestSchema>;
 export type CreateNutritionDayLog = z.infer<typeof createNutritionDayLogSchema>;
 export type UpdateNutritionDayLog = z.infer<typeof updateNutritionDayLogSchema>;
-//# sourceMappingURL=input.schemas.d.ts.map

@@ -122,4 +122,3 @@ export interface ReorderInput {
     /** For moving sub-task to different parent */
     newParentId?: string;
 }
-//# sourceMappingURL=projects.types.d.ts.map

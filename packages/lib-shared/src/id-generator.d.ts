@@ -27,4 +27,3 @@ export declare function generateUUID(): string;
  * Useful for input validation and migration checks.
  */
 export declare function isValidUUID(value: string): boolean;
-//# sourceMappingURL=id-generator.d.ts.map

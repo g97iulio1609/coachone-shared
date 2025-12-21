@@ -24,4 +24,3 @@ export * from './workout';
 export * from './ai/chat.schemas';
 export * from './ai/agents.schemas';
 export * from './analytics/body-measurements.schemas';
-//# sourceMappingURL=index.d.ts.map

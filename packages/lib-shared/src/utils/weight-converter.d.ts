@@ -32,4 +32,3 @@ export declare function syncWeightUnits(weightKg?: number | null, weightLbs?: nu
     weightKg?: number;
     weightLbs?: number;
 } | null;
-//# sourceMappingURL=weight-converter.d.ts.map

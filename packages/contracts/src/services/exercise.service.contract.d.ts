@@ -19,4 +19,3 @@ export interface IExerciseService {
     }>;
     search(searchTerm: string, locale?: string, limit?: number): Promise<Exercise[]>;
 }
-//# sourceMappingURL=exercise.service.contract.d.ts.map

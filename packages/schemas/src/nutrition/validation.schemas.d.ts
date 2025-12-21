@@ -241,9 +241,9 @@ export declare const nutritionPlanValidationSchema: z.ZodObject<{
     preferences: z.ZodDefault<z.ZodArray<z.ZodString>>;
     status: z.ZodDefault<z.ZodEnum<{
         ACTIVE: "ACTIVE";
+        DRAFT: "DRAFT";
         COMPLETED: "COMPLETED";
         ARCHIVED: "ARCHIVED";
-        DRAFT: "DRAFT";
     }>>;
     version: z.ZodDefault<z.ZodNumber>;
     userProfile: z.ZodOptional<z.ZodObject<{
@@ -252,15 +252,15 @@ export declare const nutritionPlanValidationSchema: z.ZodObject<{
         height: z.ZodNumber;
         age: z.ZodNumber;
         gender: z.ZodEnum<{
-            other: "other";
             male: "male";
             female: "female";
+            other: "other";
         }>;
         activityLevel: z.ZodEnum<{
+            active: "active";
             sedentary: "sedentary";
             light: "light";
             moderate: "moderate";
-            active: "active";
             very_active: "very_active";
         }>;
         bodyFatPercentage: z.ZodOptional<z.ZodNumber>;
@@ -362,15 +362,15 @@ export declare const userMetricsSchema: z.ZodObject<{
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>;
@@ -414,4 +414,3 @@ export declare const nutritionDayInputSchema: z.ZodObject<{
 export type UserMetrics = z.infer<typeof userMetricsSchema>;
 export type NutritionPlanGoals = z.infer<typeof nutritionPlanGoalsSchema>;
 export type NutritionDayInput = z.infer<typeof nutritionDayInputSchema>;
-//# sourceMappingURL=validation.schemas.d.ts.map

@@ -157,4 +157,3 @@ export declare function createAgentStreamRequest(agentType: AgentStreamRequest['
  * Crea un ChatRequestPayload tipizzato
  */
 export declare function createChatApiRequest(messages: ChatMessage[], options?: ChatOptions): ChatRequestPayload;
-//# sourceMappingURL=ui.types.d.ts.map

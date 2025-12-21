@@ -9,4 +9,3 @@ export declare const ROUTES: {
     readonly ONE_AGENDA: "/oneagenda";
     readonly SETTINGS: "/settings";
 };
-//# sourceMappingURL=routes.d.ts.map

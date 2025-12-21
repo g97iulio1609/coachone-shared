@@ -262,4 +262,3 @@ export interface AgentWorkoutExercise {
     description?: string;
     difficulty?: 'beginner' | 'intermediate' | 'advanced';
 }
-//# sourceMappingURL=generation.types.d.ts.map

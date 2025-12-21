@@ -73,4 +73,3 @@ export declare class RateLimitError extends AppError {
 export declare class ConflictError extends AppError {
     constructor(message: string, details?: unknown);
 }
-//# sourceMappingURL=custom-errors.d.ts.map

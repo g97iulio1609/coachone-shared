@@ -61,3 +61,4 @@ export declare function getDatesBetween(startDate: Date, endDate: Date): Date[];
  * @returns Display label in Italian
  */
 export declare function getPeriodLabel(period: Period): string;
+//# sourceMappingURL=date-range-helpers.d.ts.map

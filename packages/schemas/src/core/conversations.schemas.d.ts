@@ -17,10 +17,10 @@ export declare const conversationCreateSchema: z.ZodObject<{
     modelOverride: z.ZodOptional<z.ZodString>;
     initialMessages: z.ZodOptional<z.ZodArray<z.ZodObject<{
         role: z.ZodEnum<{
-            tool: "tool";
             user: "user";
-            system: "system";
             assistant: "assistant";
+            system: "system";
+            tool: "tool";
         }>;
         content: z.ZodString;
         metadata: z.ZodOptional<z.ZodUnknown>;
@@ -29,4 +29,3 @@ export declare const conversationCreateSchema: z.ZodObject<{
     }, z.core.$strip>>>;
 }, z.core.$strip>;
 export type ConversationCreateInput = z.infer<typeof conversationCreateSchema>;
-//# sourceMappingURL=conversations.schemas.d.ts.map

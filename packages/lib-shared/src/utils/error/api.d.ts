@@ -49,4 +49,3 @@ export declare function mapErrorToApiResponse(error: unknown): {
  * }
  */
 export declare function handleApiError(error: unknown): NextResponse<ApiErrorResponse>;
-//# sourceMappingURL=api.d.ts.map

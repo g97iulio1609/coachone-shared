@@ -101,3 +101,4 @@ export declare function isValidGoalCuid(cuid: string): boolean;
  * @returns true se valido
  */
 export declare function isValidFormGoal(formGoal: string): boolean;
+//# sourceMappingURL=nutrition-goal-mapper.d.ts.map

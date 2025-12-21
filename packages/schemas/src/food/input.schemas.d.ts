@@ -91,4 +91,3 @@ export declare const foodQuerySchema: z.ZodObject<{
 export type CreateFoodInput = z.infer<typeof createFoodSchema>;
 export type UpdateFoodInput = z.infer<typeof updateFoodSchema>;
 export type FoodQueryInput = z.infer<typeof foodQuerySchema>;
-//# sourceMappingURL=input.schemas.d.ts.map

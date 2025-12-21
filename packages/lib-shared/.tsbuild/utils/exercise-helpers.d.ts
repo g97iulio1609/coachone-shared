@@ -32,3 +32,4 @@ export declare function countExerciseTags(exercise: LocalizedExercise): number;
  * Verifica se un esercizio ha molti tag (> 8)
  */
 export declare function hasManyTags(exercise: LocalizedExercise): boolean;
+//# sourceMappingURL=exercise-helpers.d.ts.map

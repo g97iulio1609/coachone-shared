@@ -44,4 +44,3 @@ export declare const profileSchema: z.ZodObject<{
     autoRecalculateMacros: z.ZodOptional<z.ZodBoolean>;
 }, z.core.$strip>;
 export type ProfileInput = z.infer<typeof profileSchema>;
-//# sourceMappingURL=profile.schemas.d.ts.map

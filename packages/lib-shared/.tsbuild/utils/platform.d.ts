@@ -77,3 +77,4 @@ export declare function safeJSONStringify<T>(value: T, fallback?: string): strin
  * - DOM nodes
  */
 export declare function deepClone<T>(value: T): T;
+//# sourceMappingURL=platform.d.ts.map

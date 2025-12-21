@@ -46,3 +46,4 @@ export declare function areMacrosAlreadyPer100g(macros: Macros, quantity: number
  * @returns Macros guaranteed to be per-100g
  */
 export declare function ensureMacrosArePer100g(macros: Macros, quantity: number, unit?: string): Macros;
+//# sourceMappingURL=macro-normalization.d.ts.map

@@ -19,4 +19,3 @@ export interface IFoodService {
     }>;
     matchByBarcode(barcode: string, locale?: string): Promise<FoodItem | null>;
 }
-//# sourceMappingURL=food.service.contract.d.ts.map

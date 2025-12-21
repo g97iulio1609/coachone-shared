@@ -27,4 +27,3 @@ export interface RequestOptions {
  * Singleton instance
  */
 export declare const apiService: IApiService;
-//# sourceMappingURL=api.service.d.ts.map

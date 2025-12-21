@@ -170,4 +170,3 @@ export declare function isExecutionMetadata(value: unknown): value is ExecutionM
  * Type guard per verificare se un valore è CheckpointMetadata
  */
 export declare function isCheckpointMetadata(value: unknown): value is CheckpointMetadata;
-//# sourceMappingURL=prisma.types.d.ts.map

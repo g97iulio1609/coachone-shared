@@ -100,4 +100,3 @@ export declare class Logger {
      */
     measure<T>(label: string, fn: () => Promise<T> | T, context?: LogContext): Promise<T>;
 }
-//# sourceMappingURL=core.d.ts.map

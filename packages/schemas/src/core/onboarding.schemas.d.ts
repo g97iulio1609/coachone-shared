@@ -14,4 +14,3 @@ export declare const goToStepInputSchema: z.ZodObject<{
 }, z.core.$strip>;
 export type StepCompletionInput = z.infer<typeof stepCompletionInputSchema>;
 export type GoToStepInput = z.infer<typeof goToStepInputSchema>;
-//# sourceMappingURL=onboarding.schemas.d.ts.map

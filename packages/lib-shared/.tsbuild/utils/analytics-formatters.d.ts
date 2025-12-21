@@ -65,3 +65,4 @@ export declare function getMetricColorClass(value: number, target: number, toler
  * Get progress bar color based on percentage
  */
 export declare function getProgressBarColor(percentage: number): string;
+//# sourceMappingURL=analytics-formatters.d.ts.map

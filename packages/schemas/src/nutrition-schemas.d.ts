@@ -23,15 +23,15 @@ export declare const userMetricsSchema: z.ZodObject<{
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>;
@@ -73,9 +73,9 @@ export declare const tierConfigSchema: z.ZodObject<{
 export declare const reasoningConfigSchema: z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>;
 /**
@@ -114,15 +114,15 @@ export declare const nutritionRequestSchema: z.ZodObject<{
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>;
@@ -160,23 +160,23 @@ export declare const nutritionStreamRequestSchema: z.ZodIntersection<z.ZodObject
     height: z.ZodNumber;
     age: z.ZodNumber;
     gender: z.ZodEnum<{
-        other: "other";
         male: "male";
         female: "female";
+        other: "other";
     }>;
     activityLevel: z.ZodEnum<{
+        active: "active";
         sedentary: "sedentary";
         light: "light";
         moderate: "moderate";
-        active: "active";
         very_active: "very_active";
     }>;
 }, z.core.$strip>, z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>>;
 /**
@@ -215,9 +215,9 @@ export declare const nutritionDayInputSchema: z.ZodObject<{
 export declare const nutritionModifyStreamRequestSchema: z.ZodObject<{
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
     tier: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
         fast: "fast";
@@ -299,9 +299,9 @@ export declare const workoutStreamRequestSchema: z.ZodObject<{
     model: z.ZodOptional<z.ZodString>;
     reasoningEnabled: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     reasoningEffort: z.ZodOptional<z.ZodEnum<{
-        low: "low";
         medium: "medium";
         high: "high";
+        low: "low";
     }>>;
 }, z.core.$strip>;
 /**
@@ -369,4 +369,3 @@ export type CreateWorkoutSession = z.infer<typeof createWorkoutSessionSchema>;
 export type UpdateWorkoutSession = z.infer<typeof updateWorkoutSessionSchema>;
 export type CreateNutritionDayLog = z.infer<typeof createNutritionDayLogSchema>;
 export type UpdateNutritionDayLog = z.infer<typeof updateNutritionDayLogSchema>;
-//# sourceMappingURL=nutrition-schemas.d.ts.map

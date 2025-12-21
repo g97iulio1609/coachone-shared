@@ -6,7 +6,7 @@
 /**
  * Tipo di intent rilevato
  */
-export type IntentType = 'create_nutrition' | 'create_workout' | 'modify_nutrition' | 'modify_workout' | 'generate_exercises' | 'search_exercises' | 'create_exercise_variants' | 'general_chat' | 'get_info';
+export type IntentType = 'create_nutrition' | 'create_workout' | 'modify_nutrition' | 'modify_workout' | 'generate_exercises' | 'search_exercises' | 'create_exercise_variants' | 'food_crud' | 'exercise_crud' | 'general_chat' | 'get_info';
 /**
  * Parametri estratti dall'intent
  */

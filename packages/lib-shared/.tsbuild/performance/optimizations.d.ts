@@ -26,3 +26,4 @@ export declare function memoize<Args extends unknown[], Return>(fn: (...args: Ar
  * Intersection Observer for lazy loading
  */
 export declare function useIntersectionObserver(elementRef: React.RefObject<Element>, options?: IntersectionObserverInit): boolean;
+//# sourceMappingURL=optimizations.d.ts.map

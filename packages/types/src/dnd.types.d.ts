@@ -213,4 +213,3 @@ export interface SensorConfig {
     mouse?: MouseSensorConfig;
     keyboard?: KeyboardSensorConfig;
 }
-//# sourceMappingURL=dnd.types.d.ts.map

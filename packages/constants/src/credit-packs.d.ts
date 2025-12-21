@@ -38,4 +38,3 @@ export declare function findCreditPackOption(credits: number): CreditPackOption 
  * @returns Numero di crediti o null se non trovato
  */
 export declare function getCreditsFromPriceId(priceId: string): number | null;
-//# sourceMappingURL=credit-packs.d.ts.map

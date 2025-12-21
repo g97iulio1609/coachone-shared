@@ -141,3 +141,4 @@ export declare function getGlobalCache(config?: CacheConfig): IntelligentCache<s
  * Destroy global cache instance
  */
 export declare function destroyGlobalCache(): void;
+//# sourceMappingURL=intelligent-cache.d.ts.map

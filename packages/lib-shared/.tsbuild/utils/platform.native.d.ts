@@ -56,3 +56,4 @@ export declare function safeJSONParse<T>(json: string, fallback: T): T;
  * Safely stringify JSON with fallback
  */
 export declare function safeJSONStringify<T>(value: T, fallback?: string): string;
+//# sourceMappingURL=platform.native.d.ts.map

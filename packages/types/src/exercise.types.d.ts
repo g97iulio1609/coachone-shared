@@ -52,4 +52,3 @@ export interface FetchParams {
     bodyPartIds?: string[];
     muscleIds?: string[];
 }
-//# sourceMappingURL=exercise.types.d.ts.map

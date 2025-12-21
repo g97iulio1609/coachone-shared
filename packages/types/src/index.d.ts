@@ -29,4 +29,3 @@ export * from './planning.types';
 export * from './generation.types';
 export * from './dnd.types';
 export * from './maxes.types';
-//# sourceMappingURL=index.d.ts.map

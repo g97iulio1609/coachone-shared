@@ -318,14 +318,14 @@ export const exerciseSelectionOutputSchema = z.object({
         reps: z.union([z.string(), z.number()]),
         restSeconds: z.number(),
         notes: z.string().optional(),
-    })),
+    })).min(1),
     weeklyStructure: z.object({
         splitType: z.enum(['full_body', 'upper_lower', 'push_pull_legs', 'bro_split', 'custom']),
         workouts: z.array(z.object({
             day: z.string(),
             focus: z.string(),
-            exerciseNames: z.array(z.string()),
-        })),
+            exerciseNames: z.array(z.string()).min(1),
+        })).min(1),
     }),
 });
 /**
@@ -343,9 +343,9 @@ export const workoutPlanningOutputSchema = z.object({
             week: z.number(),
             phase: z.enum(['accumulation', 'intensification', 'realization', 'deload']),
             description: z.string(),
-        })),
+        })).min(1),
     }),
-    weeklySchedule: z.array(z.any()),
+    weeklySchedule: z.array(z.any()).min(1),
     progressionStrategy: z.object({
         method: z.enum(['linear', 'double_progression', 'wave_loading', 'block_periodization']),
         description: z.string(),

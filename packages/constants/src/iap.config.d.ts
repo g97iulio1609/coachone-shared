@@ -57,4 +57,3 @@ export declare const IAP_ENDPOINTS: {
     readonly RESTORE_PURCHASES: "/api/iap/restore-purchases";
     readonly GET_SUBSCRIPTION_STATUS: "/api/iap/subscription-status";
 };
-//# sourceMappingURL=iap.config.d.ts.map

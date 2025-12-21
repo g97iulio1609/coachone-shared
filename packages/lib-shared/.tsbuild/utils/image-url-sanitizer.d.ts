@@ -16,3 +16,4 @@ export declare function sanitizeImageUrl(imageUrl: string | null | undefined): s
  * @returns true se valido, false altrimenti
  */
 export declare function isValidImageUrl(imageUrl: string | null | undefined): boolean;
+//# sourceMappingURL=image-url-sanitizer.d.ts.map

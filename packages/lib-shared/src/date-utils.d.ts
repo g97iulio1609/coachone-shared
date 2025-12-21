@@ -39,4 +39,3 @@ export declare function endOfDay(date: Date | string): Date;
  * Formatta data in YYYY-MM-DD
  */
 export declare function formatDateISO(date: Date | string): string;
-//# sourceMappingURL=date-utils.d.ts.map

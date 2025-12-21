@@ -18,3 +18,4 @@ export interface IStorageService {
  * Singleton instance
  */
 export declare const storageService: IStorageService;
+//# sourceMappingURL=storage.service.d.ts.map

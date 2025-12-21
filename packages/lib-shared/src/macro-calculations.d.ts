@@ -83,4 +83,3 @@ export interface MacroCoherenceResult {
  * Validate macro coherence between actual and expected values
  */
 export declare function validateMacroCoherence(actual: Macros, expected: Macros, tolerance?: number, context?: string): MacroCoherenceResult;
-//# sourceMappingURL=macro-calculations.d.ts.map

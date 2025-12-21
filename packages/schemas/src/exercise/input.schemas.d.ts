@@ -232,4 +232,3 @@ export type ExerciseRelationInput = z.infer<typeof exerciseRelationInputSchema>;
 export type ExerciseQueryParams = z.infer<typeof exerciseQuerySchema>;
 export type ExerciseDetailQueryParams = z.infer<typeof exerciseDetailQuerySchema>;
 export {};
-//# sourceMappingURL=input.schemas.d.ts.map

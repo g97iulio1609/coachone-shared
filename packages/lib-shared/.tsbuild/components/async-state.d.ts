@@ -36,3 +36,4 @@ export interface EmptyStateProps {
  * Empty state component
  */
 export declare function EmptyState({ title, message, icon, action, className }: EmptyStateProps): import("react/jsx-runtime").JSX.Element;
+//# sourceMappingURL=async-state.d.ts.map

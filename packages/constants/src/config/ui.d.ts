@@ -9,4 +9,3 @@ export declare const UI_CONFIG: {
     readonly ANIMATION_DURATION: 200;
     readonly TOAST_DURATION: 3000;
 };
-//# sourceMappingURL=ui.d.ts.map

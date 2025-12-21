@@ -20,4 +20,3 @@ export declare const confirmPaymentIntentSchema: z.ZodObject<{
 }, z.core.$strip>;
 export type CreatePaymentIntentInput = z.infer<typeof createPaymentIntentSchema>;
 export type ConfirmPaymentIntentInput = z.infer<typeof confirmPaymentIntentSchema>;
-//# sourceMappingURL=payment.schemas.d.ts.map

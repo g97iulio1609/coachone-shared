@@ -32,4 +32,3 @@ export interface BatchProcessingOptions<TItem, TResult> {
  * @returns Array di tutti i risultati
  */
 export declare function processBatchesInParallel<TItem, TResult>(options: BatchProcessingOptions<TItem, TResult>): Promise<TResult[]>;
-//# sourceMappingURL=batch-processing.d.ts.map

@@ -64,3 +64,4 @@ export interface ErrorDetails {
  * @returns Structured error details
  */
 export declare function getErrorDetails(error: unknown): ErrorDetails;
+//# sourceMappingURL=core.d.ts.map

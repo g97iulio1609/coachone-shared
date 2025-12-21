@@ -50,4 +50,3 @@ export declare function createSystemPrompt(context?: {
     hasWorkouts?: boolean;
     hasNutrition?: boolean;
 }): string;
-//# sourceMappingURL=prompts.d.ts.map

@@ -119,4 +119,3 @@ export declare const borderColors: {
         readonly base: "#404040";
     };
 };
-//# sourceMappingURL=colors.d.ts.map

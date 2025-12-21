@@ -28,4 +28,3 @@ export declare function handleApiError(response: Response): Promise<Error>;
  * @returns Error message string
  */
 export declare function getErrorMessage(error: unknown): string;
-//# sourceMappingURL=api-error-handler.d.ts.map

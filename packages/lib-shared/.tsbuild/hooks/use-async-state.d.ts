@@ -35,3 +35,4 @@ export interface UseAsyncStateReturn<T> {
  * ```
  */
 export declare function useAsyncState<T = unknown>(options?: UseAsyncStateOptions<T>): UseAsyncStateReturn<T>;
+//# sourceMappingURL=use-async-state.d.ts.map

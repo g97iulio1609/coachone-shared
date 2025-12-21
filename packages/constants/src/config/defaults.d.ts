@@ -8,4 +8,3 @@ export declare const DEFAULTS: {
     readonly MEALS_PER_DAY: 4;
     readonly WATER_INTAKE_LITERS: 2.5;
 };
-//# sourceMappingURL=defaults.d.ts.map

@@ -276,4 +276,3 @@ export declare const AgentRole: {
     readonly MEAL_GENERATION: "meal_generation";
 };
 export type AgentRole = (typeof AgentRole)[keyof typeof AgentRole];
-//# sourceMappingURL=client-safe.types.d.ts.map

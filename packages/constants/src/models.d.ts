@@ -36,21 +36,21 @@ export declare const MODEL_CONFIG: {
     readonly [AI_MODELS.SONNET_4_5]: {
         readonly name: "Claude Sonnet 4.5";
         readonly maxTokens: 65000;
-        readonly defaultTemperature: 0.7;
+        readonly defaultTemperature: 1;
         readonly supportExtendedThinking: true;
         readonly description: "Modello bilanciato con ragionamento esteso";
     };
     readonly [AI_MODELS.HAIKU_4_5]: {
         readonly name: "Claude Haiku 4.5";
         readonly maxTokens: 65000;
-        readonly defaultTemperature: 0.7;
+        readonly defaultTemperature: 1;
         readonly supportExtendedThinking: false;
         readonly description: "Modello veloce per risposte rapide";
     };
     readonly [AI_MODELS.SONNET_3_5]: {
         readonly name: "Claude Sonnet 3.5";
         readonly maxTokens: 65000;
-        readonly defaultTemperature: 0.7;
+        readonly defaultTemperature: 1;
         readonly supportExtendedThinking: false;
         readonly description: "Modello precedente, affidabile";
     };
@@ -60,7 +60,7 @@ export declare const MODEL_CONFIG: {
  */
 export declare const TEMPERATURE_PRESETS: {
     readonly PRECISE: 0.3;
-    readonly BALANCED: 0.7;
+    readonly BALANCED: 1;
     readonly CREATIVE: 1;
 };
 /**
@@ -72,4 +72,3 @@ export declare const AI_REASONING_CONFIG: {
     /** Default reasoning effort level */
     readonly DEFAULT_REASONING_EFFORT: "high";
 };
-//# sourceMappingURL=models.d.ts.map

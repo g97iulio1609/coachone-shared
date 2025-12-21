@@ -272,4 +272,3 @@ export type AppNutritionPlan = NutritionPlan;
  * Utility type for converting Prisma Json fields to typed values
  */
 export type PrismaJsonToType<T> = T extends CompleteMacros ? CompleteMacros : T extends Macros ? Macros : T extends NutritionWeek[] ? NutritionWeek[] : T extends PersonalizedPlan ? PersonalizedPlan : T extends Adaptations ? Adaptations : T extends Record<string, unknown> ? Record<string, unknown> : T;
-//# sourceMappingURL=nutrition.types.d.ts.map

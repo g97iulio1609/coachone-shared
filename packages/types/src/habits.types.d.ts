@@ -9,4 +9,3 @@ export interface Habit {
     color?: string;
     history: boolean[];
 }
-//# sourceMappingURL=habits.types.d.ts.map

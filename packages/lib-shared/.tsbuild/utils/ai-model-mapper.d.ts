@@ -13,3 +13,4 @@ import type { OperationType } from '@onecoach/types';
  * @returns OperationType enum value
  */
 export declare function mapOperationToEnum(domain: 'nutrition' | 'workout' | 'exercise' | 'analytics', operation: 'planning' | 'execution' | 'modification'): OperationType;
+//# sourceMappingURL=ai-model-mapper.d.ts.map

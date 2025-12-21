@@ -93,4 +93,3 @@ export declare function toCatalogExerciseReference(exercise: {
     name: string;
     slug?: string;
 }): CatalogExerciseReference;
-//# sourceMappingURL=index.d.ts.map

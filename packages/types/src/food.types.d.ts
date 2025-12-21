@@ -93,4 +93,3 @@ export interface FoodMatchResult {
     matchType?: 'exact' | 'bm25' | 'fuzzy';
     confidence?: number;
 }
-//# sourceMappingURL=food.types.d.ts.map

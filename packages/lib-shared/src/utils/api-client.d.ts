@@ -29,4 +29,3 @@ export declare const api: {
  * Build URL with query parameters
  */
 export declare function buildURL(base: string, params?: Record<string, string | number | boolean | undefined | null>): string;
-//# sourceMappingURL=api-client.d.ts.map

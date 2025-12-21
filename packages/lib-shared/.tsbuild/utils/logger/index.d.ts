@@ -45,3 +45,4 @@ export declare const executorLogger: Logger;
  * @param context - Optional additional context
  */
 export declare function logError(message: string, error?: Error | unknown, context?: Record<string, unknown>): void;
+//# sourceMappingURL=index.d.ts.map
