@@ -22,7 +22,7 @@ export function formatWeight(
     return 'N/A';
   }
   if (unit === 'LBS') {
-    const lbs = weightLbs ?? kgToLbs(weightKg);
+    const lbs = weightLbs !== null && weightLbs !== undefined ? weightLbs : (weightKg >= 0 ? kgToLbs(weightKg) : 0);
     return `${lbs.toFixed(1)} lbs`;
   }
   return `${weightKg.toFixed(1)} kg`;
@@ -45,7 +45,7 @@ export function getWeightValue(
   }
 
   if (unit === 'LBS') {
-    return weightLbs !== null && weightLbs !== undefined ? weightLbs : kgToLbs(weightKg);
+    return weightLbs !== null && weightLbs !== undefined ? weightLbs : (weightKg >= 0 ? kgToLbs(weightKg) : 0);
   }
   return weightKg;
 }
