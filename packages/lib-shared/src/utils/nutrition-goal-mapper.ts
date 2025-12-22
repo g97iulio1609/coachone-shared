@@ -61,7 +61,7 @@ export function mapNutritionGoalsToForm(goalCuids?: string[]): NutritionGoalForm
   }
 
   return goalCuids
-    .map((cuid: unknown) => GOAL_CUID_TO_FORM[cuid])
+    .map((cuid: string) => GOAL_CUID_TO_FORM[cuid])
     .filter((goal): goal is NutritionGoalForm => !!goal);
 }
 
@@ -91,7 +91,7 @@ export function mapNutritionGoalToForm(goalCuid?: string): NutritionGoalForm {
  */
 export function mapFormGoalsToIds(formGoals: string[]): string[] {
   return formGoals
-    .map((goal: unknown) => GOAL_FORM_TO_CUID[goal])
+    .map((goal: string) => GOAL_FORM_TO_CUID[goal])
     .filter((cuid): cuid is string => !!cuid);
 }
 

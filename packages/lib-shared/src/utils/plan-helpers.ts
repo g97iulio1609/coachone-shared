@@ -23,7 +23,7 @@ function getTotalDays<T extends PlanWithWeeks>(plan: T): number {
   if (!plan.weeks || plan.weeks.length === 0) {
     return 0;
   }
-  return plan.weeks.reduce((total: any, week: any) => total + (week.days?.length || 0), 0);
+  return plan.weeks.reduce((total: number, week) => total + (week.days?.length || 0), 0);
 }
 
 /**

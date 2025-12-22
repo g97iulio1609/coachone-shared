@@ -10,11 +10,14 @@
  *   const confirmed = await dialog.confirm('Are you sure?');
  *   const value = await dialog.prompt('Enter value:');
  */
+
 import { useDialogStore } from '@onecoach/lib-stores/dialog.store';
+
 // Get dialog functions from store (can be called outside React components)
 const getDialogStore = () => useDialogStore.getState();
+
 export const dialog = {
-  alert: async (message, title) => {
+  alert: async (message: string, title?: string): Promise<void> => {
     if (typeof window === 'undefined') {
       // Server-side fallback
       return;
@@ -22,7 +25,8 @@ export const dialog = {
     const store = getDialogStore();
     return store.alert(message, title);
   },
-  confirm: async (message, title) => {
+
+  confirm: async (message: string, title?: string): Promise<boolean> => {
     if (typeof window === 'undefined') {
       // Server-side fallback
       return false;
@@ -30,7 +34,12 @@ export const dialog = {
     const store = getDialogStore();
     return store.confirm(message, title);
   },
-  prompt: async (message, defaultValue, title) => {
+
+  prompt: async (
+    message: string,
+    defaultValue?: string,
+    title?: string
+  ): Promise<string | null> => {
     if (typeof window === 'undefined') {
       // Server-side fallback
       return null;
@@ -38,28 +47,32 @@ export const dialog = {
     const store = getDialogStore();
     return store.prompt(message, defaultValue, title);
   },
-  info: async (message, title) => {
+
+  info: async (message: string, title?: string): Promise<void> => {
     if (typeof window === 'undefined') {
       return;
     }
     const store = getDialogStore();
     return store.info(message, title);
   },
-  success: async (message, title) => {
+
+  success: async (message: string, title?: string): Promise<void> => {
     if (typeof window === 'undefined') {
       return;
     }
     const store = getDialogStore();
     return store.success(message, title);
   },
-  warning: async (message, title) => {
+
+  warning: async (message: string, title?: string): Promise<void> => {
     if (typeof window === 'undefined') {
       return;
     }
     const store = getDialogStore();
     return store.warning(message, title);
   },
-  error: async (message, title) => {
+
+  error: async (message: string, title?: string): Promise<void> => {
     if (typeof window === 'undefined') {
       return;
     }

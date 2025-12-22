@@ -155,8 +155,8 @@ export class ParallelExecutor<T extends ExecutableTask> {
     // Check circuit breaker before starting
     if (!this.canExecute()) {
       executorLogger.error('[ParallelExecutor] Circuit breaker is OPEN, rejecting execution');
-      return tasks.map((task: unknown) => ({
-        subtaskId: task.id,
+      return tasks.map((task: T) => ({
+        subtaskId: (task as any).id || 'unknown',
         success: false,
         error: 'Circuit breaker is open - too many failures',
         retries: 0,
@@ -224,7 +224,7 @@ export class ParallelExecutor<T extends ExecutableTask> {
     // Use Promise.allSettled for better error handling
     while (queue.length > 0) {
       const batch = queue.splice(0, this.config.concurrency);
-      const promises = batch.map((task: unknown) => executeOne(task));
+      const promises = batch.map((task: T) => executeOne(task));
 
       // Wait for all tasks in batch to complete (success or failure)
       const settled = await Promise.allSettled(promises);
@@ -264,7 +264,7 @@ export class ParallelExecutor<T extends ExecutableTask> {
           ...result,
           retries: attempt,
         };
-      } catch (_error: unknown) {
+      } catch (error: unknown) {
         lastError = error as Error;
 
         // Don't retry if it's the last attempt
@@ -383,7 +383,7 @@ export class ParallelExecutor<T extends ExecutableTask> {
       const now = Date.now();
       const oneMinuteAgo = now - 60000;
       const recentRequests = this.requestTimestamps.filter(
-        (ts: unknown) => ts > oneMinuteAgo
+        (ts: number) => ts > oneMinuteAgo
       ).length;
 
       this.metrics.rateLimit.current = recentRequests;
@@ -414,7 +414,7 @@ export class ParallelExecutor<T extends ExecutableTask> {
     const oneMinuteAgo = now - 60000;
 
     // Remove timestamps older than 1 minute
-    this.requestTimestamps = this.requestTimestamps.filter((ts: unknown) => ts > oneMinuteAgo);
+    this.requestTimestamps = this.requestTimestamps.filter((ts: number) => ts > oneMinuteAgo);
 
     // Check if we're at the limit
     if (this.requestTimestamps.length >= maxRequestsPerMinute) {
@@ -451,7 +451,7 @@ export class ParallelExecutor<T extends ExecutableTask> {
     const now = Date.now();
     const oneMinuteAgo = now - 60000;
     const requestsLastMinute = this.requestTimestamps.filter(
-      (ts: unknown) => ts > oneMinuteAgo
+      (ts: number) => ts > oneMinuteAgo
     ).length;
 
     return {
@@ -520,7 +520,7 @@ export async function executeInWaves<T extends ExecutableTask>(
   const allResults: ExecutionResult[] = [];
   const parallelExecutor = new ParallelExecutor<T>(config);
 
-  const totalTasks = waves.reduce((sum: unknown, wave: unknown) => sum + wave.length, 0);
+  const totalTasks = waves.reduce((sum: number, wave: T[]) => sum + wave.length, 0);
   let completedTasks = 0;
 
   for (let i = 0; i < waves.length; i++) {

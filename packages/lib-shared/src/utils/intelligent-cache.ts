@@ -18,7 +18,7 @@
  */
 
 import { cacheLogger } from './logger';
-('server-only');
+'server-only';
 
 export interface CacheConfig {
   maxSize?: number; // Maximum number of entries (default: 1000)
@@ -61,7 +61,7 @@ export class IntelligentCache<K extends string, V> {
     misses: number;
     evictions: number;
   };
-  private cleanupTimer?: NodeJS.Timeout;
+  private cleanupTimer?: ReturnType<typeof setInterval>;
 
   constructor(config: CacheConfig = {}) {
     this.config = {

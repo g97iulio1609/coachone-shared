@@ -18,7 +18,7 @@ export function lazyLoad<T extends React.ComponentType<unknown>>(
 /**
  * Debounce function for performance
  */
-export function debounce<T extends (...args: unknown[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -40,7 +40,7 @@ export function debounce<T extends (...args: unknown[]) => any>(
 /**
  * Throttle function for performance
  */
-export function throttle<T extends (...args: unknown[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {

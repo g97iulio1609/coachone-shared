@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noEmit": false,
     "outDir": "./.tsbuild",
-    "rootDir": "./src",
+    // "rootDir": "./src",
     "composite": true,
     "declaration": true,
     "declarationMap": true,

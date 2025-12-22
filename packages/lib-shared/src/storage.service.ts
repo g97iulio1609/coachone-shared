@@ -52,7 +52,7 @@ class LocalStorageService implements IStorageService {
   clear(): void {
     try {
       const keys = this.keys();
-      keys.forEach((key: any) => this.remove(key));
+      keys.forEach((key: string) => this.remove(key));
     } catch (error: unknown) {
       console.error('Storage clear error', error);
     }
@@ -65,8 +65,8 @@ class LocalStorageService implements IStorageService {
   keys(): string[] {
     const allKeys = Object.keys(localStorage);
     return allKeys
-      .filter((key: any) => key.startsWith(this.prefix))
-      .map((key: any) => key.replace(this.prefix, ''));
+      .filter((key: string) => key.startsWith(this.prefix))
+      .map((key: string) => key.replace(this.prefix, ''));
   }
 }
 

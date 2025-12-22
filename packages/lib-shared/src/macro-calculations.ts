@@ -176,7 +176,7 @@ export function calculateProportionalMacros(
  */
 export function sumMacros(...macrosArray: Macros[]): Macros {
   const result = macrosArray.reduce(
-    (acc: any, macros: any) => ({
+    (acc: Macros, macros: Macros) => ({
       calories: acc.calories + (macros.calories || 0),
       protein: acc.protein + (macros.protein || 0),
       carbs: acc.carbs + (macros.carbs || 0),

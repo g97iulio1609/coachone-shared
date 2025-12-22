@@ -168,12 +168,12 @@ export function toPrismaJsonValue(
     return value as Prisma.InputJsonValue;
   }
   if (Array.isArray(value)) {
-    return value.map((v) => toPrismaJsonValue(v as any)) as unknown as Prisma.InputJsonValue;
+    return value.map((v) => toPrismaJsonValue(v as Record<string, unknown> | unknown[] | string | number | boolean | null)) as unknown as Prisma.InputJsonValue;
   }
   if (typeof value === 'object' && value !== null) {
     const obj: Record<string, Prisma.JsonValue> = {};
     for (const [key, val] of Object.entries(value)) {
-      obj[key] = toPrismaJsonValue(val as any) as Prisma.JsonValue;
+      obj[key] = toPrismaJsonValue(val as Record<string, unknown> | unknown[] | string | number | boolean | null) as Prisma.JsonValue;
     }
     return obj;
   }
@@ -522,7 +522,7 @@ export function toExerciseArrayTyped(json: Prisma.JsonValue | null | undefined):
         exerciseJson.sets.length > 0
       ) {
         // Migrazione legacy: converti sets flat in un singolo SetGroup
-        const legacySets = exerciseJson.sets.map((set: unknown) => setJsonToExerciseSet(set as any));
+        const legacySets = (exerciseJson.sets as unknown[]).map((set) => setJsonToExerciseSet(set as SetJson));
         const baseSet = legacySets[0] || {
           reps: undefined,
           weight: null,

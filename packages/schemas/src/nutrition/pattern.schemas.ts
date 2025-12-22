@@ -302,6 +302,7 @@ export const PatternNutritionGenerationInputSchema = z.object({
   }),
   additionalNotes: z.string().optional(),
   feedbackData: z.unknown().optional(),
+  resumeFromStateId: z.string().optional(),
 });
 export type PatternNutritionGenerationInput = z.infer<typeof PatternNutritionGenerationInputSchema>;
 

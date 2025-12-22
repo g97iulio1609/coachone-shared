@@ -252,8 +252,11 @@ export class Logger {
     // Sentry Integration (Placeholder)
     // To enable, install @sentry/nextjs or @sentry/node and uncomment:
     /*
-    if (typeof globalThis !== 'undefined' && (globalThis as any).Sentry) {
-      const Sentry = (globalThis as any).Sentry;
+    if (typeof globalThis !== 'undefined' && (globalThis as Record<string, unknown>).Sentry) {
+      const Sentry = (globalThis as Record<string, unknown>).Sentry as {
+        captureException: (e: Error, options?: unknown) => void;
+        captureMessage: (m: string, options?: unknown) => void;
+      };
       
       if (_entry.level === 'error') {
         Sentry.captureException(new Error(_entry.message), {

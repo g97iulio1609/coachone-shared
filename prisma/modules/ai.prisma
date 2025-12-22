@@ -222,3 +222,21 @@ model ai_chat_model_access {
   @@index([role])
 }
 
+// Generation state for AI orchestration recovery
+// Enables resuming from failure point instead of restarting
+model generation_states {
+  id              String   @id @default(uuid())
+  userId          String
+  type            String   // 'workout' | 'nutrition' | 'oneagenda'
+  currentPhase    String   // Phase that was executing or about to execute
+  completedPhases String[] // Successfully completed phases
+  context         Json?    // Accumulated agent outputs for resume
+  checkpoints     Json?    // Validation checkpoints passed
+  lastError       Json?    // Error context for feedback injection
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId])
+  @@index([type])
+  @@index([updatedAt])
+}
