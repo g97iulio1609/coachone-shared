@@ -138,6 +138,7 @@ export interface Exercise {
  */
 export interface WorkoutDay {
   dayNumber: number;
+  dayName: string;
   name: string;
   exercises: Exercise[];
   totalDuration?: number; // minuti stimati
@@ -152,10 +153,13 @@ export interface WorkoutDay {
  * Settimana di allenamento
  */
 export interface WorkoutWeek {
+  id?: string;
   weekNumber: number;
+  name?: string;
   days: WorkoutDay[];
   notes?: string;
   focus?: string;
+  isDeload?: boolean;
 }
 
 /**

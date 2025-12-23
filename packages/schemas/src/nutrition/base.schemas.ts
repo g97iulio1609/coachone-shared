@@ -102,11 +102,12 @@ export type Gender = z.infer<typeof GenderSchema>;
  */
 export const NutritionUserProfileSchema = z.object({
   name: z.string().optional(),
-  weight: z.number().min(30).max(300),
-  height: z.number().min(100).max(250),
+  weightKg: z.number().min(30).max(300),
+  heightCm: z.number().min(100).max(250),
   age: z.number().min(10).max(100),
-  gender: GenderSchema,
+  sex: z.enum(['male', 'female']),
   activityLevel: ActivityLevelSchema,
+  goal: z.string().default('maintenance'),
   bodyFatPercentage: z.number().min(0).max(100).optional(),
 });
 export type NutritionUserProfile = z.infer<typeof NutritionUserProfileSchema>;

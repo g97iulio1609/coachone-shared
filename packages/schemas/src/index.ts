@@ -17,6 +17,7 @@ export * from './nutrition/base.schemas';
 export * from './nutrition/validation.schemas';
 export * from './nutrition/input.schemas';
 export * from './nutrition/pattern.schemas';
+export * from './nutrition/ai.schemas';
 
 // Food schemas
 export * from './food/base.schemas';

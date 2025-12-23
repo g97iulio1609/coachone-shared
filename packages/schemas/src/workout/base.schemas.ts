@@ -185,8 +185,11 @@ export type WorkoutDay = z.infer<typeof workoutDaySchema>;
  * Workout week schema
  */
 export const workoutWeekSchema = z.object({
+  id: z.string().optional(),
   weekNumber: z.number().int().positive(),
+  name: z.string().optional(),
   focus: z.string().optional(),
+  isDeload: z.boolean().default(false).optional(),
   days: z.array(workoutDaySchema).min(1),
   notes: z.string().optional(),
 });
@@ -196,12 +199,18 @@ export type WorkoutWeek = z.infer<typeof workoutWeekSchema>;
  * Workout program schema (main)
  */
 export const workoutProgramSchema = z.object({
+  id: z.string().optional(),
+  userId: z.string().optional(),
   name: z.string().min(3, 'Nome deve essere almeno 3 caratteri'),
   description: z.string(),
   difficulty: z.enum(['BEGINNER', 'INTERMEDIATE', 'ADVANCED', 'ELITE']),
   durationWeeks: z.number().int().min(1).max(52),
   weeks: z.array(workoutWeekSchema).min(1),
   goals: z.array(z.string()),
+  status: z.enum(['DRAFT', 'ACTIVE', 'COMPLETED', 'ARCHIVED']).default('DRAFT').optional(),
+  metadata: z.record(z.string(), z.any()).default({}).optional(),
+  createdAt: z.coerce.date().optional(),
+  updatedAt: z.coerce.date().optional(),
 });
 export type WorkoutProgram = z.infer<typeof workoutProgramSchema>;
 
@@ -316,25 +325,33 @@ export type AIWorkoutProgram = z.infer<typeof aiWorkoutProgramSchema>;
  * - Each change targets a specific exercise by dayNumber + exerciseIndex + setGroupIndex
  */
 export const progressionChangeSchema = z.object({
-  dayNumber: z.number().int().positive(),
-  exerciseIndex: z.number().int().nonnegative(), // 0-based index in exercises array
-  setGroupIndex: z.number().int().nonnegative(), // 0-based index in setGroups array
+  dayNumber: z.number().int().positive()
+    .describe('REQUIRED: Day number (1-based). Every exercise on every day MUST have a change.'),
+  exerciseIndex: z.number().int().nonnegative()
+    .describe('REQUIRED: Exercise index (0-based). You MUST include a change for EVERY exercise in Week 1.'),
+  setGroupIndex: z.number().int().nonnegative()
+    .describe('REQUIRED: SetGroup index (0-based). Target the primary set group of the exercise.'),
   // reps is REQUIRED to ensure it's never lost when applying progression
-  reps: z.number().int().positive(),
+  reps: z.number().int().positive()
+    .describe('REQUIRED: Target reps. Must be included in EVERY change, even if unchanged from Week 1.'),
   // Other fields are optional - only include if they change
   weight: z.number().nonnegative().optional(),
   weightLbs: z.number().nonnegative().optional(),
   intensityPercent: z.number().min(0).max(100).optional(),
   rpe: z.number().int().min(1).max(10).optional(),
   rest: z.number().int().positive().optional(),
-  count: z.number().int().positive().optional(), // Add/remove sets
+  count: z.number().int().positive().optional()
+    .describe('Optional: Change number of sets. Use for volume manipulation.'),
 });
 export type ProgressionChange = z.infer<typeof progressionChangeSchema>;
 
 export const progressionWeekDiffSchema = z.object({
-  focus: z.string().optional(),
+  focus: z.string()
+    .describe('REQUIRED: Strategic focus for this week (e.g., "Volume accumulation", "Intensity peak", "Deload recovery")'),
   notes: z.string().optional(),
-  changes: z.array(progressionChangeSchema), // Array of changes to apply
+  changes: z.array(progressionChangeSchema)
+    .default([])
+    .describe('Array of changes. Empty array means no changes (Week 1 structure is preserved).'),
 });
 export type ProgressionWeekDiff = z.infer<typeof progressionWeekDiffSchema>;
 

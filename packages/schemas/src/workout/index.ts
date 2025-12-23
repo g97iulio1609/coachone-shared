@@ -66,14 +66,28 @@ export {
   type WorkoutPlanningOutput,
 } from './base.schemas';
 
-// Input schemas per API
+// Input schemas per API & Agents
 export {
   workoutRequestBaseSchema,
   workoutStreamRequestSchema,
   createWorkoutSessionSchema,
   updateWorkoutSessionSchema,
+  // Agentic Input Schemas
+  workoutUserProfileSchema,
+  workoutGoalsSchema,
+  oneRepMaxDataSchema,
+  exerciseSelectionInputSchema,
+  workoutPlanningInputSchema,
+  workoutGenerationInputSchema,
+  // Tipi inferiti
   type WorkoutRequestBase,
   type WorkoutStreamRequest,
   type CreateWorkoutSession,
   type UpdateWorkoutSession,
+  type WorkoutUserProfile,
+  type WorkoutGoals,
+  type OneRepMaxData,
+  type ExerciseSelectionInput,
+  type WorkoutPlanningInput,
+  type WorkoutGenerationInput,
 } from './input.schemas';

@@ -11,7 +11,7 @@
  */
 
 import { Prisma } from '@prisma/client';
-import { generateId } from './id-generator';
+import { createId } from './id-generator';
 import type {
   Macros,
   Exercise,
@@ -533,7 +533,7 @@ export function toExerciseArrayTyped(json: Prisma.JsonValue | null | undefined):
         };
         setGroups = [
           {
-            id: generateId('setgroup'),
+            id: createId(),
             count: legacySets.length,
             baseSet,
             sets: legacySets,

@@ -4,7 +4,34 @@
  * Utility functions per conversione e formattazione pesi
  */
 
-import { kgToLbs, lbsToKg } from '@onecoach/lib-workout/intensity-calculator';
+
+/**
+ * Converte chilogrammi in libbre
+ * Gestisce gracefully valori nulli, undefined, NaN o negativi ritornando 0
+ * @param kg - Peso in chilogrammi
+ * @returns Peso in libbre (0 se input invalido)
+ */
+export function kgToLbs(kg: number | null | undefined): number {
+  // Defensive: gestisci null, undefined, NaN e valori negativi
+  if (kg === null || kg === undefined || Number.isNaN(kg) || kg < 0) {
+    return 0;
+  }
+  return kg * 2.20462;
+}
+
+/**
+ * Converte libbre in chilogrammi
+ * Gestisce gracefully valori nulli, undefined, NaN o negativi ritornando 0
+ * @param lbs - Peso in libbre
+ * @returns Peso in chilogrammi (0 se input invalido)
+ */
+export function lbsToKg(lbs: number | null | undefined): number {
+  // Defensive: gestisci null, undefined, NaN e valori negativi
+  if (lbs === null || lbs === undefined || Number.isNaN(lbs) || lbs < 0) {
+    return 0;
+  }
+  return lbs / 2.20462;
+}
 
 /**
  * Formatta il peso in base all'unità preferita
@@ -13,7 +40,7 @@ import { kgToLbs, lbsToKg } from '@onecoach/lib-workout/intensity-calculator';
  * @param unit - Unità preferita ('KG' o 'LBS')
  * @returns Stringa formattata con valore e unità
  */
-export function formatWeight(
+export function formatWeightByUnit(
   weightKg: number | null,
   weightLbs: number | null | undefined,
   unit: 'KG' | 'LBS'
@@ -50,8 +77,7 @@ export function getWeightValue(
   return weightKg;
 }
 
-// Re-export conversion functions
-export { kgToLbs, lbsToKg };
+// Note: kgToLbs and lbsToKg are already exported above
 
 /**
  * Sincronizza peso in kg e lbs, assicurando che entrambi siano sempre presenti
