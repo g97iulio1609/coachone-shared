@@ -10,7 +10,7 @@
  * - SOLID: Single responsibility per ogni funzione
  */
 import { Prisma } from '@prisma/client';
-import { generateId } from './id-generator';
+import {  createId  } from './id-generator';
 import { isSetJson, isExerciseJson, isPlanMetadata, isExecutionMetadata, isCheckpointMetadata, } from '@onecoach/types';
 /**
  * Type guard: verifica se un valore è un oggetto Macros valido
@@ -461,7 +461,7 @@ export function toExerciseArrayTyped(json) {
                 };
                 setGroups = [
                     {
-                        id: generateId('setgroup'),
+                        id: createId(),
                         count: legacySets.length,
                         baseSet,
                         sets: legacySets,

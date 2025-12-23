@@ -14,14 +14,7 @@ export function createId(): string {
   return generateUUID();
 }
 
-/**
- * Generate UUID v4 identifier.
- * @deprecated Use createId() instead for consistency.
- * Legacy function kept for backward compatibility - prefix is now ignored.
- */
-export function generateId(_prefix?: string): string {
-  return generateUUID();
-}
+
 
 /**
  * Generate RFC 4122 UUID v4.
