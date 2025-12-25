@@ -7,6 +7,8 @@
  * @module @onecoach/types/maxes
  */
 
+import type { Visibility } from './projects.types';
+
 // ============================================================================
 // Core Types
 // ============================================================================
@@ -31,6 +33,12 @@ export interface Max {
   lastUpdated: string;
   /** Data creazione */
   createdAt: string;
+  /** Visibilità del massimale (Prisma field) */
+  visibility?: Visibility;
+  /** ID utente a cui è assegnato (Prisma field) */
+  assignedToUserId?: string;
+  /** ID coach che ha assegnato (Prisma field) */
+  assignedByCoachId?: string;
 }
 
 /**
