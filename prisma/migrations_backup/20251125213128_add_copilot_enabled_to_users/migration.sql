@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "users" ADD COLUMN IF NOT EXISTS "copilotEnabled" BOOLEAN NOT NULL DEFAULT true;
