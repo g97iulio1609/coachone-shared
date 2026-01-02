@@ -2,6 +2,7 @@ export type ProjectStatus = 'ACTIVE' | 'COMPLETED' | 'ARCHIVED' | 'ON_HOLD';
 export type ProjectTaskStatus = 'TODO' | 'IN_PROGRESS' | 'DONE' | 'COMPLETED' | 'BLOCKED' | 'CANCELLED';
 export type TaskPriority = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 export type MilestoneStatus = 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+export type Visibility = 'PRIVATE' | 'SHARED_WITH_COACH';
 /**
  * Dependency reference for tasks and milestones
  */
@@ -30,6 +31,10 @@ export interface Task {
     dependsOn?: DependencyRef[];
     /** Tasks that depend on this one */
     dependedOnBy?: DependencyRef[];
+    /** Task IDs that block this task (Prisma field) */
+    blockedBy?: string[];
+    /** Calculated depth in task hierarchy (for UI purposes) */
+    depth?: number;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -50,6 +55,25 @@ export interface Milestone {
     dependsOn?: DependencyRef[];
     /** Milestones that depend on this one */
     dependedOnBy?: DependencyRef[];
+    /** Prisma relation: Milestones that block this one (raw Prisma data) */
+    agenda_milestone_dependencies_agenda_milestone_dependencies_blockedIdToagenda_milestones?: Array<{
+        agenda_milestones_agenda_milestone_dependencies_blockerIdToagenda_milestones: {
+            id: string;
+            name: string;
+        };
+    }>;
+    /** Prisma field: Name field (when different from title) */
+    name?: string;
+    /** Prisma relation: Project reference */
+    agenda_projects?: {
+        name?: string;
+    };
+    /** Prisma relation: Sub-milestones */
+    subMilestones?: Milestone[];
+    /** Prisma relation: Tasks count */
+    agenda_tasks?: Array<{
+        id: string;
+    }>;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -71,6 +95,12 @@ export interface Project {
     milestones?: Milestone[];
     /** Root-level tasks (not in any milestone) */
     tasks?: Task[];
+    /** Visibility setting for the project */
+    visibility?: Visibility;
+    /** User ID this project is assigned to (for coach-assigned projects) */
+    assignedToUserId?: string;
+    /** Coach ID who assigned this project */
+    assignedByCoachId?: string;
     createdAt?: Date;
     updatedAt: Date;
 }

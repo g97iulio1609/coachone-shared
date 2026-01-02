@@ -91,6 +91,9 @@ export interface MaxApiItem {
   createdAt?: string;
   version?: number;
   exercise: MaxExercise;
+  visibility?: Visibility;
+  assignedToUserId?: string;
+  assignedByCoachId?: string;
 }
 
 /**
@@ -100,6 +103,8 @@ export interface UpsertMaxPayload {
   exerciseId: string;
   oneRepMax: number;
   notes?: string | null;
+  visibility?: Visibility;
+  assignedToUserId?: string;
 }
 
 /**
@@ -255,6 +260,9 @@ export function apiItemToMax(item: MaxApiItem): Max {
     version: item.version || 1,
     lastUpdated: item.lastUpdated,
     createdAt: item.createdAt || item.lastUpdated,
+    visibility: item.visibility,
+    assignedToUserId: item.assignedToUserId,
+    assignedByCoachId: item.assignedByCoachId,
   };
 }
 

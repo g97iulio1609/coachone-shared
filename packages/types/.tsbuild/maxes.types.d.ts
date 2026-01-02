@@ -6,6 +6,7 @@
  *
  * @module @onecoach/types/maxes
  */
+import type { Visibility } from './projects.types';
 /**
  * Massimale (1RM) dell'utente per un esercizio specifico
  */
@@ -26,6 +27,12 @@ export interface Max {
     lastUpdated: string;
     /** Data creazione */
     createdAt: string;
+    /** Visibilità del massimale (Prisma field) */
+    visibility?: Visibility;
+    /** ID utente a cui è assegnato (Prisma field) */
+    assignedToUserId?: string;
+    /** ID coach che ha assegnato (Prisma field) */
+    assignedByCoachId?: string;
 }
 /**
  * Versione storica di un massimale
@@ -70,6 +77,9 @@ export interface MaxApiItem {
     createdAt?: string;
     version?: number;
     exercise: MaxExercise;
+    visibility?: Visibility;
+    assignedToUserId?: string;
+    assignedByCoachId?: string;
 }
 /**
  * Payload per creazione/aggiornamento massimale
@@ -78,6 +88,8 @@ export interface UpsertMaxPayload {
     exerciseId: string;
     oneRepMax: number;
     notes?: string | null;
+    visibility?: Visibility;
+    assignedToUserId?: string;
 }
 /**
  * Risposta API POST/PUT /api/profile/maxes

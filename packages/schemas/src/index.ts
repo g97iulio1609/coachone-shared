@@ -36,12 +36,14 @@ export * from './one-rep-max';
 
 // Workout schemas
 export * from './workout/base.schemas';
+export * from './workout/imported-workout.schema';
 export * from './workout/input.schemas';
 export * from './workout';
 
 // AI schemas
 export * from './ai/chat.schemas';
 export * from './ai/agents.schemas';
+export * from './ai/tool-params.schemas';
 
 // Analytics schemas
 export * from './analytics/body-measurements.schemas';

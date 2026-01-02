@@ -8,6 +8,7 @@
  */
 
 import { createContext, useContext, useEffect, useMemo } from 'react';
+
 import { useThemeStore, useSystemThemeSync, useTheme as useThemeHook } from './theme.store';
 import type { ThemePreference, ResolvedTheme, ThemeProviderProps } from './types';
 
@@ -35,6 +36,7 @@ export function ThemeProvider({
     initialTheme,
     initialActualTheme,
 }: ThemeProviderProps) {
+
     // Hydrate store with server-provided values on mount
     useEffect(() => {
         const store = useThemeStore.getState();

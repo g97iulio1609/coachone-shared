@@ -15,6 +15,7 @@ export interface Habit {
   description?: string;
   frequency: HabitFrequency;
   streak?: number;
+  icon?: string;
   color?: string;
   logs?: HabitLog[];
   metadata?: {
