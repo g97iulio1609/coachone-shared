@@ -8,7 +8,7 @@
  *
  * Principi: KISS, SOLID (Single Responsibility), DRY
  */
-import { getModelByTier } from '@onecoach/lib-ai-agents/core/providers';
+import { getModelByTier } from '@onecoach/lib-ai';
 import { createAIProvider, createCostCalculator } from '@onecoach/one-agent';
 import { TOKEN_LIMITS } from '@onecoach/constants/models';
 /**
@@ -23,7 +23,7 @@ export async function createAIAgentConfig(options = {}) {
     // Get model configuration
     const modelConfig = getModelByTier(modelTier);
     // Import dinamico per evitare che venga incluso nel bundle client
-    const { AIProviderConfigService } = await import('@onecoach/lib-ai/ai-provider-config.service');
+    const { AIProviderConfigService } = await import('@onecoach/lib-ai');
     const apiKey = await AIProviderConfigService.getApiKey(modelConfig.provider);
     if (!apiKey) {
         throw new Error(`API key non configurata per il provider ${modelConfig.provider}`);
