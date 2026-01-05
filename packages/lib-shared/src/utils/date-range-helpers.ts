@@ -5,7 +5,8 @@
  * Following DRY principle - centralized date range logic for analytics.
  */
 
-import type { Period as AnalyticsPeriod } from '@onecoach/lib-analytics/coach-analytics.service';
+// AnalyticsPeriod is redefined here to avoid circular dependencies with lib-analytics
+export type AnalyticsPeriod = '7d' | '30d' | '90d' | '1y';
 
 export interface DateRange {
   startDate: Date;

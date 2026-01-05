@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noEmit": false,
     "outDir": "./.tsbuild",
-    // "rootDir": "./src",
+    "rootDir": "./src",
     "composite": true,
     "declaration": true,
     "declarationMap": true,
@@ -21,5 +21,10 @@
     ".tsbuild",
     "**/*.js",
     "**/*.d.ts"
+  ],
+  "references": [
+    { "path": "../../../onecoach-types" },
+    { "path": "../../../onecoach-schemas" },
+    { "path": "../../../onecoach-constants" }
   ]
 }

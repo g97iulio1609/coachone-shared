@@ -7,9 +7,9 @@
 
 import { z } from 'zod';
 
-export type PatchValidator<T extends z.ZodTypeAny> = (schema: T, payload: unknown) => z.infer<T>;
+export type PatchValidator<T extends z.ZodObject<any>> = (schema: T, payload: unknown) => any;
 
-export function validatePatch<T extends z.ZodTypeAny>(schema: T, payload: unknown): z.infer<T> {
+export function validatePatch<T extends z.ZodObject<any>>(schema: T, payload: unknown): any {
   return schema.partial().parse(payload);
 }
 

@@ -8,7 +8,9 @@
 'use client';
 
 import { Loader2, AlertCircle, AlertTriangle } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+// Button is intentionally not imported from @onecoach/ui to avoid circular dependencies
+// and keep lib-shared clean of heavy UI deps.
+// import { Button } from '@onecoach/ui';
 
 export interface LoadingStateProps {
   message?: string;
@@ -71,9 +73,12 @@ export function ErrorState({
         <p className="mt-2 text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
         {action && <div className="mt-4">{action}</div>}
         {!action && onRetry && (
-          <Button onClick={onRetry} variant="default" className="mt-4">
+          <button
+            onClick={onRetry}
+            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+          >
             {retryLabel}
-          </Button>
+          </button>
         )}
       </div>
     </div>

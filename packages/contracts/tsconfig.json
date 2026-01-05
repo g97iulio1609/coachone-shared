@@ -18,10 +18,10 @@
   ],
   "references": [
     {
-      "path": "../types"
+      "path": "../../../onecoach-types"
     },
     {
-      "path": "../schemas"
+      "path": "../../../onecoach-schemas"
     }
   ]
 }
