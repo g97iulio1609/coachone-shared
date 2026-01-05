@@ -20,4 +20,5 @@ export * from './url-normalizer';
 export * from './simple-cache';
 export * from './ai-model-mapper';
 export * from './weight-converter';
+export * from './flight-types';
 //# sourceMappingURL=index.d.ts.map

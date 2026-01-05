@@ -1,0 +1,429 @@
+import { z } from 'zod';
+export declare const ValidateMacrosParamsSchema: z.ZodObject<{
+    macros: z.ZodObject<{
+        calories: z.ZodNumber;
+        protein: z.ZodNumber;
+        carbs: z.ZodNumber;
+        fats: z.ZodNumber;
+        fiber: z.ZodOptional<z.ZodNumber>;
+    }, z.core.$strip>;
+    tolerance: z.ZodDefault<z.ZodNumber>;
+}, z.core.$strip>;
+export declare const CalculateNutritionNeedsParamsSchema: z.ZodObject<{
+    weight: z.ZodNumber;
+    height: z.ZodNumber;
+    age: z.ZodNumber;
+    gender: z.ZodEnum<{
+        other: "other";
+        male: "male";
+        female: "female";
+    }>;
+    activityLevel: z.ZodEnum<{
+        moderate: "moderate";
+        active: "active";
+        sedentary: "sedentary";
+        light: "light";
+        very_active: "very_active";
+    }>;
+    goal: z.ZodEnum<{
+        weight_loss: "weight_loss";
+        muscle_gain: "muscle_gain";
+        maintenance: "maintenance";
+        performance: "performance";
+        health: "health";
+        body_recomposition: "body_recomposition";
+    }>;
+    dietType: z.ZodDefault<z.ZodEnum<{
+        omnivore: "omnivore";
+        vegetarian: "vegetarian";
+        vegan: "vegan";
+        pescatarian: "pescatarian";
+        keto: "keto";
+        paleo: "paleo";
+        mediterranean: "mediterranean";
+    }>>;
+}, z.core.$strip>;
+export declare const CalculateDayTotalsParamsSchema: z.ZodObject<{
+    meals: z.ZodArray<z.ZodObject<{
+        foods: z.ZodArray<z.ZodObject<{
+            macros: z.ZodObject<{
+                calories: z.ZodNumber;
+                protein: z.ZodNumber;
+                carbs: z.ZodNumber;
+                fats: z.ZodNumber;
+            }, z.core.$strip>;
+            quantity: z.ZodNumber;
+        }, z.core.$strip>>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export declare const AggregateDayParamsSchema: z.ZodObject<{
+    meals: z.ZodArray<z.ZodAny>;
+}, z.core.$strip>;
+export declare const CheckFoodAvailabilityParamsSchema: z.ZodObject<{
+    queries: z.ZodArray<z.ZodString>;
+}, z.core.$strip>;
+export declare const ValidateWeekParamsSchema: z.ZodObject<{
+    week: z.ZodAny;
+}, z.core.$strip>;
+export declare const SuggestFoodSwapsParamsSchema: z.ZodObject<{
+    currentFoodItemId: z.ZodOptional<z.ZodString>;
+    reason: z.ZodOptional<z.ZodString>;
+    restrictions: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    maxResults: z.ZodDefault<z.ZodNumber>;
+}, z.core.$strip>;
+export declare const CalculateMealMacrosParamsSchema: z.ZodObject<{
+    foods: z.ZodArray<z.ZodObject<{
+        name: z.ZodString;
+        quantity: z.ZodNumber;
+        unit: z.ZodString;
+        macrosPer100g: z.ZodObject<{
+            calories: z.ZodNumber;
+            protein: z.ZodNumber;
+            carbs: z.ZodNumber;
+            fats: z.ZodNumber;
+            fiber: z.ZodOptional<z.ZodNumber>;
+        }, z.core.$strip>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export declare const AdjustMealMacrosParamsSchema: z.ZodObject<{
+    foods: z.ZodArray<z.ZodObject<{
+        name: z.ZodString;
+        quantity: z.ZodNumber;
+        unit: z.ZodString;
+        macros: z.ZodObject<{
+            calories: z.ZodNumber;
+            protein: z.ZodNumber;
+            carbs: z.ZodNumber;
+            fats: z.ZodNumber;
+        }, z.core.$strip>;
+    }, z.core.$strip>>;
+    targetMacros: z.ZodObject<{
+        calories: z.ZodNumber;
+        protein: z.ZodNumber;
+        carbs: z.ZodNumber;
+        fats: z.ZodNumber;
+    }, z.core.$strip>;
+    tolerance: z.ZodDefault<z.ZodNumber>;
+    prioritizeMacro: z.ZodDefault<z.ZodEnum<{
+        calories: "calories";
+        protein: "protein";
+        carbs: "carbs";
+        fats: "fats";
+    }>>;
+}, z.core.$strip>;
+export declare const CreateFoodParamsSchema: z.ZodObject<{
+    foods: z.ZodArray<z.ZodObject<{
+        name: z.ZodString;
+        macrosPer100g: z.ZodObject<{
+            calories: z.ZodNumber;
+            protein: z.ZodNumber;
+            carbs: z.ZodNumber;
+            fats: z.ZodNumber;
+            fiber: z.ZodOptional<z.ZodNumber>;
+        }, z.core.$strip>;
+        unit: z.ZodDefault<z.ZodString>;
+        servingSize: z.ZodDefault<z.ZodNumber>;
+        description: z.ZodOptional<z.ZodString>;
+        brandName: z.ZodOptional<z.ZodString>;
+        category: z.ZodOptional<z.ZodString>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export declare const ExerciseSetForVolumeSchema: z.ZodObject<{
+    reps: z.ZodOptional<z.ZodNumber>;
+    duration: z.ZodOptional<z.ZodNumber>;
+    weight: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    weightDone: z.ZodOptional<z.ZodNumber>;
+    repsDone: z.ZodOptional<z.ZodNumber>;
+    durationDone: z.ZodOptional<z.ZodNumber>;
+}, z.core.$strip>;
+export declare const SetGroupForVolumeSchema: z.ZodObject<{
+    id: z.ZodString;
+    count: z.ZodNumber;
+    baseSet: z.ZodObject<{
+        reps: z.ZodOptional<z.ZodNumber>;
+        duration: z.ZodOptional<z.ZodNumber>;
+        weight: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        weightDone: z.ZodOptional<z.ZodNumber>;
+        repsDone: z.ZodOptional<z.ZodNumber>;
+        durationDone: z.ZodOptional<z.ZodNumber>;
+    }, z.core.$strip>;
+    sets: z.ZodArray<z.ZodObject<{
+        reps: z.ZodOptional<z.ZodNumber>;
+        duration: z.ZodOptional<z.ZodNumber>;
+        weight: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        weightDone: z.ZodOptional<z.ZodNumber>;
+        repsDone: z.ZodOptional<z.ZodNumber>;
+        durationDone: z.ZodOptional<z.ZodNumber>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export declare const CalculateVolumeParamsSchema: z.ZodObject<{
+    exercises: z.ZodArray<z.ZodObject<{
+        name: z.ZodOptional<z.ZodString>;
+        setGroups: z.ZodArray<z.ZodObject<{
+            id: z.ZodString;
+            count: z.ZodNumber;
+            baseSet: z.ZodObject<{
+                reps: z.ZodOptional<z.ZodNumber>;
+                duration: z.ZodOptional<z.ZodNumber>;
+                weight: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                weightDone: z.ZodOptional<z.ZodNumber>;
+                repsDone: z.ZodOptional<z.ZodNumber>;
+                durationDone: z.ZodOptional<z.ZodNumber>;
+            }, z.core.$strip>;
+            sets: z.ZodArray<z.ZodObject<{
+                reps: z.ZodOptional<z.ZodNumber>;
+                duration: z.ZodOptional<z.ZodNumber>;
+                weight: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                weightDone: z.ZodOptional<z.ZodNumber>;
+                repsDone: z.ZodOptional<z.ZodNumber>;
+                durationDone: z.ZodOptional<z.ZodNumber>;
+            }, z.core.$strip>>;
+        }, z.core.$strip>>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export declare const WorkoutDayTotalsParamsSchema: z.ZodObject<{
+    day: z.ZodObject<{
+        dayNumber: z.ZodNumber;
+        dayName: z.ZodString;
+        name: z.ZodString;
+        targetMuscles: z.ZodArray<z.ZodString>;
+        exercises: z.ZodArray<z.ZodObject<{
+            id: z.ZodOptional<z.ZodString>;
+            exerciseId: z.ZodString;
+            name: z.ZodString;
+            description: z.ZodString;
+            type: z.ZodEnum<{
+                compound: "compound";
+                accessory: "accessory";
+                isolation: "isolation";
+                core: "core";
+            }>;
+            category: z.ZodEnum<{
+                strength: "strength";
+                endurance: "endurance";
+                core: "core";
+                cardio: "cardio";
+                flexibility: "flexibility";
+                balance: "balance";
+            }>;
+            muscleGroup: z.ZodOptional<z.ZodString>;
+            muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
+                chest: "chest";
+                shoulders: "shoulders";
+                core: "core";
+                back: "back";
+                arms: "arms";
+                legs: "legs";
+                "full-body": "full-body";
+            }>>>;
+            setGroups: z.ZodArray<z.ZodObject<{
+                id: z.ZodString;
+                count: z.ZodNumber;
+                baseSet: z.ZodObject<{
+                    reps: z.ZodOptional<z.ZodNumber>;
+                    repsMax: z.ZodOptional<z.ZodNumber>;
+                    duration: z.ZodOptional<z.ZodNumber>;
+                    weight: z.ZodNullable<z.ZodNumber>;
+                    weightMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    weightLbs: z.ZodNullable<z.ZodNumber>;
+                    intensityPercent: z.ZodNullable<z.ZodNumber>;
+                    intensityPercentMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    rpe: z.ZodNullable<z.ZodNumber>;
+                    rpeMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    rest: z.ZodNumber;
+                    done: z.ZodOptional<z.ZodBoolean>;
+                    repsDone: z.ZodOptional<z.ZodNumber>;
+                    durationDone: z.ZodOptional<z.ZodNumber>;
+                    weightDone: z.ZodOptional<z.ZodNumber>;
+                    weightDoneLbs: z.ZodOptional<z.ZodNumber>;
+                    notes: z.ZodOptional<z.ZodString>;
+                }, z.core.$strip>;
+                progression: z.ZodOptional<z.ZodObject<{
+                    type: z.ZodEnum<{
+                        rpe: "rpe";
+                        linear: "linear";
+                        percentage: "percentage";
+                    }>;
+                    steps: z.ZodArray<z.ZodObject<{
+                        fromSet: z.ZodNumber;
+                        toSet: z.ZodNumber;
+                        adjustment: z.ZodNumber;
+                    }, z.core.$strip>>;
+                }, z.core.$strip>>;
+                sets: z.ZodArray<z.ZodObject<{
+                    reps: z.ZodOptional<z.ZodNumber>;
+                    repsMax: z.ZodOptional<z.ZodNumber>;
+                    duration: z.ZodOptional<z.ZodNumber>;
+                    weight: z.ZodNullable<z.ZodNumber>;
+                    weightMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    weightLbs: z.ZodNullable<z.ZodNumber>;
+                    intensityPercent: z.ZodNullable<z.ZodNumber>;
+                    intensityPercentMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    rpe: z.ZodNullable<z.ZodNumber>;
+                    rpeMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                    rest: z.ZodNumber;
+                    done: z.ZodOptional<z.ZodBoolean>;
+                    repsDone: z.ZodOptional<z.ZodNumber>;
+                    durationDone: z.ZodOptional<z.ZodNumber>;
+                    weightDone: z.ZodOptional<z.ZodNumber>;
+                    weightDoneLbs: z.ZodOptional<z.ZodNumber>;
+                    notes: z.ZodOptional<z.ZodString>;
+                }, z.core.$strip>>;
+            }, z.core.$strip>>;
+            reps: z.ZodOptional<z.ZodString>;
+            rest: z.ZodOptional<z.ZodString>;
+            intensity: z.ZodOptional<z.ZodString>;
+            typeLabel: z.ZodOptional<z.ZodString>;
+            repRange: z.ZodOptional<z.ZodString>;
+            notes: z.ZodOptional<z.ZodString>;
+            formCues: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            variation: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodString>>;
+            equipment: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            videoUrl: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        totalDuration: z.ZodOptional<z.ZodNumber>;
+        notes: z.ZodString;
+        warmup: z.ZodOptional<z.ZodString>;
+        cooldown: z.ZodString;
+    }, z.core.$strip>;
+}, z.core.$strip>;
+export declare const ValidateWorkoutWeekParamsSchema: z.ZodObject<{
+    week: z.ZodAny;
+}, z.core.$strip>;
+export declare const ValidateWorkoutProgramParamsSchema: z.ZodObject<{
+    program: z.ZodObject<{
+        id: z.ZodOptional<z.ZodString>;
+        userId: z.ZodOptional<z.ZodString>;
+        name: z.ZodString;
+        description: z.ZodString;
+        difficulty: z.ZodEnum<{
+            BEGINNER: "BEGINNER";
+            INTERMEDIATE: "INTERMEDIATE";
+            ADVANCED: "ADVANCED";
+            ELITE: "ELITE";
+        }>;
+        durationWeeks: z.ZodNumber;
+        weeks: z.ZodArray<z.ZodObject<{
+            id: z.ZodOptional<z.ZodString>;
+            weekNumber: z.ZodNumber;
+            name: z.ZodOptional<z.ZodString>;
+            focus: z.ZodOptional<z.ZodString>;
+            isDeload: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
+            days: z.ZodArray<z.ZodObject<{
+                dayNumber: z.ZodNumber;
+                dayName: z.ZodString;
+                name: z.ZodString;
+                targetMuscles: z.ZodArray<z.ZodString>;
+                exercises: z.ZodArray<z.ZodObject<{
+                    id: z.ZodOptional<z.ZodString>;
+                    exerciseId: z.ZodString;
+                    name: z.ZodString;
+                    description: z.ZodString;
+                    type: z.ZodEnum<{
+                        compound: "compound";
+                        accessory: "accessory";
+                        isolation: "isolation";
+                        core: "core";
+                    }>;
+                    category: z.ZodEnum<{
+                        strength: "strength";
+                        endurance: "endurance";
+                        core: "core";
+                        cardio: "cardio";
+                        flexibility: "flexibility";
+                        balance: "balance";
+                    }>;
+                    muscleGroup: z.ZodOptional<z.ZodString>;
+                    muscleGroups: z.ZodOptional<z.ZodArray<z.ZodEnum<{
+                        chest: "chest";
+                        shoulders: "shoulders";
+                        core: "core";
+                        back: "back";
+                        arms: "arms";
+                        legs: "legs";
+                        "full-body": "full-body";
+                    }>>>;
+                    setGroups: z.ZodArray<z.ZodObject<{
+                        id: z.ZodString;
+                        count: z.ZodNumber;
+                        baseSet: z.ZodObject<{
+                            reps: z.ZodOptional<z.ZodNumber>;
+                            repsMax: z.ZodOptional<z.ZodNumber>;
+                            duration: z.ZodOptional<z.ZodNumber>;
+                            weight: z.ZodNullable<z.ZodNumber>;
+                            weightMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            weightLbs: z.ZodNullable<z.ZodNumber>;
+                            intensityPercent: z.ZodNullable<z.ZodNumber>;
+                            intensityPercentMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            rpe: z.ZodNullable<z.ZodNumber>;
+                            rpeMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            rest: z.ZodNumber;
+                            done: z.ZodOptional<z.ZodBoolean>;
+                            repsDone: z.ZodOptional<z.ZodNumber>;
+                            durationDone: z.ZodOptional<z.ZodNumber>;
+                            weightDone: z.ZodOptional<z.ZodNumber>;
+                            weightDoneLbs: z.ZodOptional<z.ZodNumber>;
+                            notes: z.ZodOptional<z.ZodString>;
+                        }, z.core.$strip>;
+                        progression: z.ZodOptional<z.ZodObject<{
+                            type: z.ZodEnum<{
+                                rpe: "rpe";
+                                linear: "linear";
+                                percentage: "percentage";
+                            }>;
+                            steps: z.ZodArray<z.ZodObject<{
+                                fromSet: z.ZodNumber;
+                                toSet: z.ZodNumber;
+                                adjustment: z.ZodNumber;
+                            }, z.core.$strip>>;
+                        }, z.core.$strip>>;
+                        sets: z.ZodArray<z.ZodObject<{
+                            reps: z.ZodOptional<z.ZodNumber>;
+                            repsMax: z.ZodOptional<z.ZodNumber>;
+                            duration: z.ZodOptional<z.ZodNumber>;
+                            weight: z.ZodNullable<z.ZodNumber>;
+                            weightMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            weightLbs: z.ZodNullable<z.ZodNumber>;
+                            intensityPercent: z.ZodNullable<z.ZodNumber>;
+                            intensityPercentMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            rpe: z.ZodNullable<z.ZodNumber>;
+                            rpeMax: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                            rest: z.ZodNumber;
+                            done: z.ZodOptional<z.ZodBoolean>;
+                            repsDone: z.ZodOptional<z.ZodNumber>;
+                            durationDone: z.ZodOptional<z.ZodNumber>;
+                            weightDone: z.ZodOptional<z.ZodNumber>;
+                            weightDoneLbs: z.ZodOptional<z.ZodNumber>;
+                            notes: z.ZodOptional<z.ZodString>;
+                        }, z.core.$strip>>;
+                    }, z.core.$strip>>;
+                    reps: z.ZodOptional<z.ZodString>;
+                    rest: z.ZodOptional<z.ZodString>;
+                    intensity: z.ZodOptional<z.ZodString>;
+                    typeLabel: z.ZodOptional<z.ZodString>;
+                    repRange: z.ZodOptional<z.ZodString>;
+                    notes: z.ZodOptional<z.ZodString>;
+                    formCues: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    variation: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodString>>;
+                    equipment: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    videoUrl: z.ZodOptional<z.ZodString>;
+                }, z.core.$strip>>;
+                totalDuration: z.ZodOptional<z.ZodNumber>;
+                notes: z.ZodString;
+                warmup: z.ZodOptional<z.ZodString>;
+                cooldown: z.ZodString;
+            }, z.core.$strip>>;
+            notes: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        goals: z.ZodArray<z.ZodString>;
+        status: z.ZodOptional<z.ZodDefault<z.ZodEnum<{
+            ACTIVE: "ACTIVE";
+            COMPLETED: "COMPLETED";
+            DRAFT: "DRAFT";
+            ARCHIVED: "ARCHIVED";
+        }>>>;
+        metadata: z.ZodOptional<z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodAny>>>;
+        createdAt: z.ZodOptional<z.ZodCoercedDate<unknown>>;
+        updatedAt: z.ZodOptional<z.ZodCoercedDate<unknown>>;
+    }, z.core.$strip>;
+}, z.core.$strip>;
