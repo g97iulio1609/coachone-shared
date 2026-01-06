@@ -238,20 +238,6 @@ export function toExerciseArray(
 }
 
 /**
- * Type guard: verifica se un oggetto ha proprietà setGroups valide
- * SSOT: Usa SOLO setGroups, non sets legacy
- *
- * @deprecated Usa hasValidSetGroups da @onecoach/lib-workout invece
- * @param exercise - Exercise object
- * @returns true se ha setGroups array valido
- */
-export function hasValidSets(exercise: Record<string, unknown>): boolean {
-  return (
-    'setGroups' in exercise && Array.isArray(exercise.setGroups) && exercise.setGroups.length > 0
-  );
-}
-
-/**
  * Estrae il valore numerico da un set done (weight/reps)
  *
  * @param value - Valore da convertire

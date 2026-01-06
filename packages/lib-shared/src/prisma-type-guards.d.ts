@@ -80,15 +80,6 @@ export declare function isExerciseArray(value: unknown): value is Array<Record<s
  */
 export declare function toExerciseArray(json: Prisma.JsonValue | null | undefined): Array<Record<string, unknown>>;
 /**
- * Type guard: verifica se un oggetto ha proprietà setGroups valide
- * SSOT: Usa SOLO setGroups, non sets legacy
- *
- * @deprecated Usa hasValidSetGroups da @onecoach/lib-workout invece
- * @param exercise - Exercise object
- * @returns true se ha setGroups array valido
- */
-export declare function hasValidSets(exercise: Record<string, unknown>): boolean;
-/**
  * Estrae il valore numerico da un set done (weight/reps)
  *
  * @param value - Valore da convertire
