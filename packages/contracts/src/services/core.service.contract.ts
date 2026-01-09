@@ -91,6 +91,7 @@ export interface UserProfileInput {
   weightIncrement?: number | null;
   activityLevel?: ActivityLevel | null;
   trainingFrequency?: number | null;
+  sessionDurationMinutes?: number | null;
   dailyCalories?: number | null;
   nutritionGoals?: string[] | null;
   workoutGoals?: string[] | null;
